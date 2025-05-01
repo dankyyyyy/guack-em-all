@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Cado : MonoBehaviour {
     // The offset of the sprite to hide it.
-    private Vector2 startPosition = new Vector2(0f, -2.56f);
+    private Vector2 startPosition = new Vector2(0f, -1.56f);
     private Vector2 endPosition = Vector2.zero;
     // How long it takes to show a mole. 
     private float showDuration = 0.5f;
@@ -17,7 +17,7 @@ private IEnumerator ShowHide(Vector2 start,  Vector2 end) {
     // Show the mole.
     float elapsed = 0f;
     while(elapsed < showDuration) {
-        transform.localPosition = Vector2.Lerp(end, start, elapsed / showDuration);
+        transform.localPosition = Vector2.Lerp(start, end, elapsed / showDuration);
         //Update at max framerate 
         elapsed += Time.deltaTime;
         yield return null;
