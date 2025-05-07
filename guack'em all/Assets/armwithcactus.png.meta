@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8874c04c95720d04da9ca6460a422810
+guid: 6a42f78125584fa4fbaa706ebf36aa26
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6651843710471098437
-    second: ligthsaber_icon-icons.com_60277_0
+      213: -8049908367006388923
+    second: armwithcactus_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ligthsaber_icon-icons.com_60277_0
+      name: armwithcactus_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 17
-        width: 470
-        height: 470
-      alignment: 6
-      pivot: {x: 0, y: 0}
+        x: 1
+        y: 16
+        width: 115
+        height: 116
+      alignment: 9
+      pivot: {x: 0.13395095, y: 0.5457305}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 540db089c98105c50800000000000000
-      internalID: 6651843710471098437
+      spriteID: 54da32e8dfaf84090800000000000000
+      internalID: -8049908367006388923
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fe876789c52f9a545923939ee4269216
+    spriteID: 1e15b5513d4a19b4e9b4acf92298442b
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ligthsaber_icon-icons.com_60277_0: 6651843710471098437
+      armwithcactus_0: -8049908367006388923
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

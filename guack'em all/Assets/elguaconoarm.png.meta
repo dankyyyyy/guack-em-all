@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ee2c46a35a2c66049b817cf683652fd9
+guid: 36ba1eddef98d4f43b03a6d47182d3d6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2546780136684012876
-    second: cheems-removebg-preview_0
+      213: 6627788204465921796
+    second: elguaconoarm_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cheems-removebg-preview_0
+      name: elguaconoarm_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 1
-        width: 217
-        height: 270
+        x: 0
+        y: 17
+        width: 151
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c4542187a0bf75320800000000000000
-      internalID: 2546780136684012876
+      spriteID: 40f17b5a142aafb50800000000000000
+      internalID: 6627788204465921796
       vertices: []
       indices: 
       edges: []

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float jumpSpeed = 12f;
+   
     public float moveSpeed = 5f;
 
     private Rigidbody2D myRigidbody;
@@ -17,22 +17,21 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        moveDirection = Vector2.zero;
-       // Update direction when key is pressed
-        if (Input.GetKey(KeyCode.A)) moveDirection = Vector2.left;
-        if (Input.GetKey(KeyCode.D)) moveDirection = Vector2.right;
-        if (Input.GetKey(KeyCode.W)) moveDirection = Vector2.up;
-        if (Input.GetKey(KeyCode.S)) moveDirection = Vector2.down;
+  void Update()
+{
+    moveDirection = Vector2.zero;
 
-        FlipSprite();
-    }
+    if (Input.GetKey(KeyCode.A)) moveDirection = Vector2.left;
+    if (Input.GetKey(KeyCode.D)) moveDirection = Vector2.right;
+    if (Input.GetKey(KeyCode.W)) moveDirection = Vector2.up;
+    if (Input.GetKey(KeyCode.S)) moveDirection = Vector2.down;
+
+    FlipSprite();
+}
  void FixedUpdate()
-    {
-        // Apply movement continuously in the chosen direction
-        myRigidbody.velocity = moveDirection * moveSpeed;
-    }
+{
+    myRigidbody.velocity = moveDirection * moveSpeed;
+}
     void FlipSprite()
     {
         if (moveDirection == Vector2.left)

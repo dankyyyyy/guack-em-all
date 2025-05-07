@@ -14,6 +14,6 @@ public class AnimationSpeed : MonoBehaviour
     // Update is called once per frame
     void ChangeAnimationSpeed()
     {
-        anim.speed = 0.4f;
+        anim.speed = 0.85f;
     }
 }

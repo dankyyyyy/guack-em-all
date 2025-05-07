@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7907a7191cb5e1641bc21dac05ae2f0d
+guid: 63da101d9feb5ae4bb392260803ff240
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6865344981023876
-    second: nugget_0
+      213: -4534132039741000462
+    second: armwithchicken_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: nugget_0
+      name: armwithchicken_0
       rect:
         serializedVersion: 2
-        x: 71
-        y: 0
-        width: 278
-        height: 420
+        x: 527
+        y: 343
+        width: 438
+        height: 509
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c73452f410c97eff0800000000000000
-      internalID: -6865344981023876
+      spriteID: 2f43586cee68311c0800000000000000
+      internalID: -4534132039741000462
       vertices: []
       indices: 
       edges: []

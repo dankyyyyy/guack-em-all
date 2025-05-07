@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3f211277769cbce44a74794330f98f72
+guid: 5f4a3f78b3f04dc498fd6f06ff6e97af
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4578895662871536268
-    second: cheems_0
+      213: -1068132557331587
+    second: Elguaco_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cheems_0
+      name: Elguaco_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 280
-        height: 280
+        y: 17
+        width: 151
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c82e80968518b8f30800000000000000
-      internalID: 4578895662871536268
+      spriteID: d73e8520a843cfff0800000000000000
+      internalID: -1068132557331587
       vertices: []
       indices: 
       edges: []
