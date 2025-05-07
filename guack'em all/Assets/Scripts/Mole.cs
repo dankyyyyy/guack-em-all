@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class Mole : MonoBehaviour {
+public class Mole : MonoBehaviour
+{
   [Header("Graphics")]
   [SerializeField] private Sprite mole;
   [SerializeField] private Sprite moleHardHat;
@@ -28,6 +29,7 @@ public class Mole : MonoBehaviour {
   private Vector2 boxSizeHidden;
 
   // Mole Parameters 
+  [Header("Mole")]
   private bool hittable = true;
   public enum MoleType { Standard, HardHat, Bomb };
   private MoleType moleType;
@@ -36,13 +38,19 @@ public class Mole : MonoBehaviour {
   private int lives;
   private int moleIndex = 0;
 
-  private IEnumerator ShowHide(Vector2 start, Vector2 end) {
+  // Player Parameters
+  [Header("Player")]
+  private PlayerAttack playerAttack;
+
+  private IEnumerator ShowHide(Vector2 start, Vector2 end)
+  {
     // Make sure we start at the start.
     transform.localPosition = start;
 
     // Show the mole.
     float elapsed = 0f;
-    while (elapsed < showDuration) {
+    while (elapsed < showDuration)
+    {
       transform.localPosition = Vector2.Lerp(start, end, elapsed / showDuration);
       boxCollider2D.offset = Vector2.Lerp(boxOffsetHidden, boxOffset, elapsed / showDuration);
       boxCollider2D.size = Vector2.Lerp(boxSizeHidden, boxSize, elapsed / showDuration);
@@ -61,7 +69,8 @@ public class Mole : MonoBehaviour {
 
     // Hide the mole.
     elapsed = 0f;
-    while (elapsed < showDuration) {
+    while (elapsed < showDuration)
+    {
       transform.localPosition = Vector2.Lerp(end, start, elapsed / showDuration);
       boxCollider2D.offset = Vector2.Lerp(boxOffset, boxOffsetHidden, elapsed / showDuration);
       boxCollider2D.size = Vector2.Lerp(boxSize, boxSizeHidden, elapsed / showDuration);
@@ -75,78 +84,98 @@ public class Mole : MonoBehaviour {
     boxCollider2D.size = boxSizeHidden;
 
     // If we got to the end and it's still hittable then we missed it.
-    if (hittable) {
+    if (hittable)
+    {
       hittable = false;
       // We only give time penalty if it isn't a bomb.
       gameManager.Missed(moleIndex, moleType != MoleType.Bomb);
     }
   }
 
-  public void Hide() {
+  public void Hide()
+  {
     // Set the appropriate mole parameters to hide it.
     transform.localPosition = startPosition;
     boxCollider2D.offset = boxOffsetHidden;
     boxCollider2D.size = boxSizeHidden;
   }
 
-  private IEnumerator QuickHide() {
+  private IEnumerator QuickHide()
+  {
     yield return new WaitForSeconds(0.25f);
     // Whilst we were waiting we may have spawned again here, so just
     // check that hasn't happened before hiding it. This will stop it
     // flickering in that case.
-    if (!hittable) {
+    if (!hittable)
+    {
       Hide();
     }
   }
 
-  private void OnTriggerEnter2D(Collider2D collision) {
-    if (!hittable) return;
+  private void OnTriggerEnter2D(Collider2D collision)
+  {
+    Debug.Log("Mole: OnTriggerEnter2D was called by " + collision.gameObject.name);
 
-    if (collision.gameObject.CompareTag("Weapon")) {
-        switch (moleType) {
-            case MoleType.Standard:
-                spriteRenderer.sprite = moleHit;
-                gameManager.AddScore(moleIndex);
-                StopAllCoroutines();
-                StartCoroutine(QuickHide());
-                hittable = false;
-                break;
-            case MoleType.HardHat:
-                if (lives == 2) {
-                    spriteRenderer.sprite = moleHatBroken;
-                    lives--;
-                } else {
-                    spriteRenderer.sprite = moleHatHit;
-                    gameManager.AddScore(moleIndex);
-                    StopAllCoroutines();
-                    StartCoroutine(QuickHide());
-                    hittable = false;
-                }
-                break;
-            case MoleType.Bomb:
-                gameManager.GameOver(1);
-                break;
-        }
+    // if (!hittable) return;
+
+    if (collision.gameObject.CompareTag("Weapon") && playerAttack != null && playerAttack.IsSwinging)
+    {
+      Debug.Log("Mole: Collision is with a Weapon");
+      switch (moleType)
+      {
+        case MoleType.Standard:
+          spriteRenderer.sprite = moleHit;
+          gameManager.AddScore(moleIndex);
+          StopAllCoroutines();
+          StartCoroutine(QuickHide());
+          hittable = false;
+          break;
+        case MoleType.HardHat:
+          if (lives == 2)
+          {
+            spriteRenderer.sprite = moleHatBroken;
+            lives--;
+          }
+          else
+          {
+            spriteRenderer.sprite = moleHatHit;
+            gameManager.AddScore(moleIndex);
+            StopAllCoroutines();
+            StartCoroutine(QuickHide());
+            hittable = false;
+          }
+          break;
+        case MoleType.Bomb:
+          gameManager.GameOver(1);
+          break;
+      }
     }
-}
+  }
 
 
-  private void CreateNext() {
+  private void CreateNext()
+  {
     float random = Random.Range(0f, 1f);
-    if (random < bombRate) {
+    if (random < bombRate)
+    {
       // Make a bomb.
       moleType = MoleType.Bomb;
       // The animator handles setting the sprite.
       animator.enabled = true;
-    } else {
+    }
+    else
+    {
       animator.enabled = false;
       random = Random.Range(0f, 1f);
-      if (random < hardRate) {
+      if (random < hardRate)
+      {
         // Create a hard one.
         moleType = MoleType.HardHat;
         spriteRenderer.sprite = moleHardHat;
         lives = 2;
-      } else {
+      }
+      else
+      {
         // Create a standard one.
         moleType = MoleType.Standard;
         spriteRenderer.sprite = mole;
@@ -158,7 +187,8 @@ public class Mole : MonoBehaviour {
   }
 
   // As the level progresses the game gets harder.
-  private void SetLevel(int level) {
+  private void SetLevel(int level)
+  {
     // As level increases increse the bomb rate to 0.25 at level 10.
     bombRate = Mathf.Min(level * 0.025f, 0.25f);
 
@@ -171,7 +201,8 @@ public class Mole : MonoBehaviour {
     duration = Random.Range(durationMin, durationMax);
   }
 
-  private void Awake() {
+  private void Awake()
+  {
     // Get references to the components we'll need.
     spriteRenderer = GetComponent<SpriteRenderer>();
     animator = GetComponent<Animator>();
@@ -183,19 +214,22 @@ public class Mole : MonoBehaviour {
     boxSizeHidden = new Vector2(boxSize.x, 0f);
   }
 
-  public void Activate(int level) {
+  public void Activate(int level)
+  {
     SetLevel(level);
     CreateNext();
     StartCoroutine(ShowHide(startPosition, endPosition));
   }
 
   // Used by the game manager to uniquely identify moles. 
-  public void SetIndex(int index) {
+  public void SetIndex(int index)
+  {
     moleIndex = index;
   }
 
   // Used to freeze the game on finish.
-  public void StopGame() {
+  public void StopGame()
+  {
     hittable = false;
     StopAllCoroutines();
   }

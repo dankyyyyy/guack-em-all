@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-   
+
     public float moveSpeed = 10f;
 
-    private Rigidbody2D playerRigidbody;
+    [SerializeField] private Rigidbody2D playerRigidbody;
+    [SerializeField] private Collider2D playerCollider;
     private Vector2 moveDirection = Vector2.zero;
     private SpriteRenderer spriteRenderer;
 
@@ -13,25 +14,26 @@ public class Player : MonoBehaviour
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
+        playerCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
-  void Update()
-{
-    moveDirection = Vector2.zero;
+    void Update()
+    {
+        moveDirection = Vector2.zero;
 
-    if (Input.GetKey(KeyCode.A)) moveDirection = Vector2.left;
-    if (Input.GetKey(KeyCode.D)) moveDirection = Vector2.right;
-    if (Input.GetKey(KeyCode.W)) moveDirection = Vector2.up;
-    if (Input.GetKey(KeyCode.S)) moveDirection = Vector2.down;
+        if (Input.GetKey(KeyCode.A)) moveDirection = Vector2.left;
+        if (Input.GetKey(KeyCode.D)) moveDirection = Vector2.right;
+        if (Input.GetKey(KeyCode.W)) moveDirection = Vector2.up;
+        if (Input.GetKey(KeyCode.S)) moveDirection = Vector2.down;
 
-    FlipSprite();
-}
- void FixedUpdate()
-{
-    playerRigidbody.linearVelocity = moveDirection * moveSpeed;
-}
+        FlipSprite();
+    }
+    void FixedUpdate()
+    {
+        playerRigidbody.linearVelocity = moveDirection * moveSpeed;
+    }
     void FlipSprite()
     {
         if (moveDirection == Vector2.left)

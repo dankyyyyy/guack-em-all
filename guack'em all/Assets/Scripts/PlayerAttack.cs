@@ -2,44 +2,35 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private Animator animator;
-    public TrailRenderer trailRenderer;
-    public ParticleSystem swipeParticles; // <-- Add this
+    public bool IsSwinging { get; private set; } = false;
 
-    void Start()
+    // Call this to start a swing
+    public void StartSwing()
     {
-        animator = GetComponent<Animator>();
-        trailRenderer.emitting = false;
-
-        // Optional: Stop particle system if it loops
-        if (swipeParticles != null)
-        {
-            swipeParticles.Stop();
-        }
+        IsSwinging = true;
+        Debug.Log("Swing started!");
+        // StartCoroutine(EndSwingAfterDelay(1f)); // Example duration
     }
 
-    void Update()
+    private System.Collections.IEnumerator EndSwingAfterDelay(float delay)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            animator.SetTrigger("Attack");
-
-            // Enable trail
-            trailRenderer.emitting = true;
-
-            // Play particles
-            if (swipeParticles != null)
-            {
-                swipeParticles.Play();
-            }
-
-            // Disable trail shortly after (can be timed with animation or use coroutine)
-            Invoke("StopTrail", 0.3f); // Adjust delay based on animation
-        }
+        yield return new WaitForSeconds(delay);
+        IsSwinging = false;
     }
 
-    void StopTrail()
-    {
-        trailRenderer.emitting = false;
-    }
+    // You'll need to call StartSwing() from your Player's input handling
+    // whenever the player initiates an attack. For example:
+    //
+    // In your Player.cs (or a separate attack input script):
+    //
+    // public PlayerAttack attackController;
+    //
+    // void Update()
+    // {
+    //     if (Input.GetMouseButtonDown(0)) // Example: Left mouse button for attack
+    //     {
+    //         attackController.StartSwing();
+    //         // Potentially trigger attack animation or other effects
+    //     }
+    // }
 }
