@@ -99,42 +99,37 @@ public class Mole : MonoBehaviour {
     }
   }
 
-  private void OnMouseDown() {
-    if (hittable) {
-      switch (moleType) {
-        case MoleType.Standard:
-          spriteRenderer.sprite = moleHit;
-          gameManager.AddScore(moleIndex);
-          // Stop the animation
-          StopAllCoroutines();
-          StartCoroutine(QuickHide());
-          // Turn off hittable so that we can't keep tapping for score.
-          hittable = false;
-          break;
-        case MoleType.HardHat:
-          // If lives == 2 reduce, and change sprite.
-          if (lives == 2) {
-            spriteRenderer.sprite = moleHatBroken;
-            lives--;
-          } else {
-            spriteRenderer.sprite = moleHatHit;
-            gameManager.AddScore(moleIndex);
-            // Stop the animation
-            StopAllCoroutines();
-            StartCoroutine(QuickHide());
-            // Turn off hittable so that we can't keep tapping for score.
-            hittable = false;
-          }
-          break;
-        case MoleType.Bomb:
-          // Game over, 1 for bomb.
-          gameManager.GameOver(1);
-          break;
-        default:
-          break;
-      }
+  private void OnTriggerEnter2D(Collider2D collision) {
+    if (!hittable) return;
+
+    if (collision.gameObject.CompareTag("Weapon")) {
+        switch (moleType) {
+            case MoleType.Standard:
+                spriteRenderer.sprite = moleHit;
+                gameManager.AddScore(moleIndex);
+                StopAllCoroutines();
+                StartCoroutine(QuickHide());
+                hittable = false;
+                break;
+            case MoleType.HardHat:
+                if (lives == 2) {
+                    spriteRenderer.sprite = moleHatBroken;
+                    lives--;
+                } else {
+                    spriteRenderer.sprite = moleHatHit;
+                    gameManager.AddScore(moleIndex);
+                    StopAllCoroutines();
+                    StartCoroutine(QuickHide());
+                    hittable = false;
+                }
+                break;
+            case MoleType.Bomb:
+                gameManager.GameOver(1);
+                break;
+        }
     }
-  }
+}
+
 
   private void CreateNext() {
     float random = Random.Range(0f, 1f);
