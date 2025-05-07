@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-[SerializeField] private List<Cado> moles;
+[SerializeField] private List<Mole> moles;
 
 [Header("UI objects")]
 [SerializeField] private GameObject playButton;
@@ -21,7 +21,7 @@ private float startingTime = 30f;
 
 // Global variables 
 private float timeRemaining;
-private HashSet<Cado> currentMoles = new HashSet<Cado>();
+private HashSet<Mole> currentMoles = new HashSet<Mole>();
 private int score;
 private bool playing = false; 
 
@@ -55,7 +55,7 @@ public void GameOver(int type) {
     }
     
     //hide all moles 
-    foreach (Cado mole in moles) {
+    foreach (Mole mole in moles) {
         mole.StopGame();
     }
     // Stop the game and show the start ui.

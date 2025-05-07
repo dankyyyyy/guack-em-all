@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Cado : MonoBehaviour {
+public class Mole : MonoBehaviour {
     [Header("Graphics")]
     [SerializeField] private Sprite mole;
     [SerializeField] private Sprite moleHardHat;
@@ -17,7 +17,7 @@ public class Cado : MonoBehaviour {
     private Vector2 startPosition = new Vector2(0f, -1.56f);
     private Vector2 endPosition = Vector2.zero;
     // How long it takes to show a mole. 
-    private float showDuration = 0.9f;
+    private float showDuration = 0.5f;
     private float duration = 1f;
 
     private SpriteRenderer spriteRenderer;
@@ -203,9 +203,9 @@ private void Setlevel(int level) {
     // Increase the amounts of hardhats until 100% at level 40 
     hardRate = Mathf.Min(level * 0.025f, 1f);
 
-    // duration bounds get quicker as we progress. No cap on insanity. 
-    float durationMin = Mathf.Clamp(1 - level * 0.5f, 0.5f, 1f);
-    float durationMax = Mathf.Clamp(2 - level * 0.05f, 1f, 2f);
+    // duration that moles go up and down bounds get quicker as we progress. No cap on insanity. 
+    float durationMin = Mathf.Clamp(1 - level * 0.005f, 0.9f, 1f);
+    float durationMax = Mathf.Clamp(2 - level * 0.005f, 1f, 2f);
     duration = Random.Range(durationMin, durationMax);
 }
 
