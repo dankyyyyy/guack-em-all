@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      armwithchicken_0: -4534132039741000462
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

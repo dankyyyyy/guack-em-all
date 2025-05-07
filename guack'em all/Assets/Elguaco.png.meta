@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Elguaco_0: -1068132557331587
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

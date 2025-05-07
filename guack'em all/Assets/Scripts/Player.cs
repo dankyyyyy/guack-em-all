@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 }
  void FixedUpdate()
 {
-    myRigidbody.velocity = moveDirection * moveSpeed;
+    myRigidbody.linearVelocity = moveDirection * moveSpeed;
 }
     void FlipSprite()
     {
