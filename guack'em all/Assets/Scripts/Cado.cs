@@ -9,11 +9,15 @@ public class Cado : MonoBehaviour {
     [SerializeField] private Sprite moleHit;
     [SerializeField] private Sprite moleHatHit;
 
+    [Header("GameManager")]
+    [SerializeField] private GameManager gameManager;
+
+
     // The offset of the sprite to hide it.
     private Vector2 startPosition = new Vector2(0f, -1.56f);
     private Vector2 endPosition = Vector2.zero;
     // How long it takes to show a mole. 
-    private float showDuration = 0.5f;
+    private float showDuration = 0.9f;
     private float duration = 1f;
 
     private SpriteRenderer spriteRenderer;
@@ -31,9 +35,14 @@ public class Cado : MonoBehaviour {
     private float hardRate = 0.25f; //how often we want hardhat version of mole
     private float bombRate = 0f; // how often bombs appear
     private int lives; // hard hat mole has two lives 
+    private int moleIndex = 0;
 
 
 
+// Used by the game manager to uniquely identify moles. 
+public void SetIndex(int index) {
+    moleIndex = index;
+}
 
 private IEnumerator ShowHide(Vector2 start,  Vector2 end) {
     transform.localPosition = start;
@@ -54,6 +63,15 @@ transform.localPosition = end;
 boxCollider2D.offset = boxOffset;
 boxCollider2D.size = boxSize;
 
+
+// if we got to the end and its still hittable then we missed it 
+if (hittable) {
+    hittable = false;
+    // we only give time penalty if it isnt a bomb.
+    gameManager.Missed(moleIndex, moleType != MoleType.Bomb);
+}
+
+
 // Wait for duration to pass. 
 yield return new WaitForSeconds(duration);
 
@@ -72,13 +90,10 @@ transform.localPosition = start;
 boxCollider2D.offset = boxOffsetHidden;
 boxCollider2D.size = boxSizeHidden;
 
-// Restart the coroutine to make the mole go up and down continuously
-StartCoroutine(ShowHide(start, end));
-
 }
 
-private void Start() {
-    Setlevel(0);
+public void Activate(int level) {
+    Setlevel(level);
     CreateNext();
     StartCoroutine(ShowHide(startPosition, endPosition));
 }
@@ -92,7 +107,7 @@ private void CreateNext () {                       // Decides what mole to make
         moleType = MoleType.Bomb;
         // the animator handles setting the sprite. 
         animator.enabled = true;
-    } else{
+    } else {
     animator.enabled = false;
     random = Random.Range(0f, 1f);
     if (random < hardRate) {
@@ -119,20 +134,23 @@ private void Awake(){
     // Work out collider values. 
     boxOffset = boxCollider2D.offset;
     boxSize = boxCollider2D.size;
-    boxOffsetHidden = new Vector2 (boxOffset.x, -startPosition.y / 2f);
-    boxSizeHidden = new Vector2(boxSize.x, 0f);
+    boxOffsetHidden = new Vector2(boxOffset.x, (startPosition.y + endPosition.y) / 2f); // position of hiding box collider
+    boxSizeHidden = new Vector2(boxSize.x, 0f);  // size of hidden box collider 
 }
 
 private void OnMouseDown()    {
     if (hittable) {
         switch (moleType) {
                 case MoleType.Standard:
-                 spriteRenderer.sprite = moleHit;
+                spriteRenderer.sprite = moleHit;
+                gameManager.AddScore(moleIndex);
+
+                // Turn off hittable so that we can't keep tapping the score. 
+                hittable = false;
+
                 // Stop the animation
                 StopAllCoroutines();
                 StartCoroutine(QuickHide());
-                // Turn off hittable so that we cant keep tapping the score. 
-                 hittable = false;
                  break;
              case MoleType.HardHat:
                 // If lives == 2 reduce, and change sprite.
@@ -141,6 +159,7 @@ private void OnMouseDown()    {
                     lives--;
                 } else {
                      spriteRenderer.sprite = moleHatHit;
+                     gameManager.AddScore(moleIndex);
                     // stop the animation 
                     StopAllCoroutines();
                     StartCoroutine(QuickHide());
@@ -149,6 +168,8 @@ private void OnMouseDown()    {
                 }
                 break;
             case MoleType.Bomb:
+            // game over, 1 for bomb 
+                gameManager.GameOver(1);
                 break;
               default:
                 break;
@@ -171,7 +192,7 @@ public void Hide() {
     //set the appropriate mole parameters to hide it 
     transform.localPosition = startPosition;
     boxCollider2D.offset = boxOffsetHidden;
-    boxCollider2D.size = boxOffsetHidden;   
+    boxCollider2D.size = boxSizeHidden;   
 } 
 
 // As the level progresses the game gets harder. 
@@ -183,10 +204,15 @@ private void Setlevel(int level) {
     hardRate = Mathf.Min(level * 0.025f, 1f);
 
     // duration bounds get quicker as we progress. No cap on insanity. 
-    float durationMin = Mathf.Clamp(1 - level * 0.1f, 0.01f, 1f);
-    float durationMax = Mathf.Clamp(2 - level * 0.1f, 0.01f, 2f);
+    float durationMin = Mathf.Clamp(1 - level * 0.5f, 0.5f, 1f);
+    float durationMax = Mathf.Clamp(2 - level * 0.05f, 1f, 2f);
     duration = Random.Range(durationMin, durationMax);
 }
 
 
+// used to freeze the game on finish
+public void StopGame() {
+    hittable = false; 
+    StopAllCoroutines();
+}
 }
