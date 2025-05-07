@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MonsterDamage : MonoBehaviour
+public class PlayerDamage : MonoBehaviour
 {
     public int damage;
 
@@ -8,10 +8,10 @@ public class MonsterDamage : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
+            AvocadoHealth avocadoHealth = collision.gameObject.GetComponent<AvocadoHealth>();
+            if (avocadoHealth != null)
             {
-                playerHealth.TakeDamage(damage);
+                avocadoHealth.TakeDamage(damage);
             }
         }
     }

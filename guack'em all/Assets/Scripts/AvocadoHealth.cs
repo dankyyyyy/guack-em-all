@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class AvocadoHealth : MonoBehaviour
 {
     public int maxHealth = 10;
     public int health;
@@ -25,7 +25,9 @@ public class PlayerHealth : MonoBehaviour
             ScoreManager.instance.AddPoint(4);
             PlayDeathEffect();
         }
-        void PlayDeathEffect()
+    }
+
+    private void PlayDeathEffect()
     {
         if (deathSound != null)
     {
@@ -48,8 +50,6 @@ public class PlayerHealth : MonoBehaviour
         
     
         Destroy(gameObject);
-    
-    }
     
     }
 }

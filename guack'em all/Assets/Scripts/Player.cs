@@ -3,16 +3,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
    
-    public float moveSpeed = 5f;
+    public float moveSpeed = 10f;
 
-    private Rigidbody2D myRigidbody;
+    private Rigidbody2D playerRigidbody;
     private Vector2 moveDirection = Vector2.zero;
     private SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        myRigidbody = GetComponent<Rigidbody2D>();
+        playerRigidbody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 }
  void FixedUpdate()
 {
-    myRigidbody.linearVelocity = moveDirection * moveSpeed;
+    playerRigidbody.linearVelocity = moveDirection * moveSpeed;
 }
     void FlipSprite()
     {

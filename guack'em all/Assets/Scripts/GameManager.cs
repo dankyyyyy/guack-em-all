@@ -5,7 +5,6 @@ public class GameManager : MonoBehaviour {
   [SerializeField] private List<Mole> moles;
 
   [Header("UI objects")]
-  [SerializeField] private GameObject playButton;
   [SerializeField] private GameObject gameUI;
   [SerializeField] private GameObject outOfTimeText;
   [SerializeField] private GameObject bombText;
@@ -22,9 +21,8 @@ public class GameManager : MonoBehaviour {
   private bool playing = false;
 
   // This is public so the play button can see it.
-  public void StartGame() {
+  public void Awake() {
     // Hide/show the UI elements we don't/do want to see.
-    playButton.SetActive(false);
     outOfTimeText.SetActive(false);
     bombText.SetActive(false);
     gameUI.SetActive(true);
@@ -53,9 +51,6 @@ public class GameManager : MonoBehaviour {
     foreach (Mole mole in moles) {
       mole.StopGame();
     }
-    // Stop the game and show the start UI.
-    playing = false;
-    playButton.SetActive(true);
   }
 
   // Update is called once per frame
@@ -91,6 +86,7 @@ public class GameManager : MonoBehaviour {
     currentMoles.Remove(moles[moleIndex]);
   }
 
+//TODO Remove the missedf function? This is what make the time tick down faster.
   public void Missed(int moleIndex, bool isMole) {
     if (isMole) {
       // Decrease time by a little bit.
