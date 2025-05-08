@@ -12,6 +12,7 @@ public class Mole : MonoBehaviour
 
   [Header("GameManager")]
   [SerializeField] private GameManager gameManager;
+  [SerializeField] private AttackManager attackManager;
 
   // The offset of the sprite to hide it.
   private Vector2 startPosition = new Vector2(0f, -2.56f);
@@ -29,18 +30,13 @@ public class Mole : MonoBehaviour
   private Vector2 boxSizeHidden;
 
   // Mole Parameters 
-  [Header("Mole")]
   private bool hittable = true;
   public enum MoleType { Standard, HardHat, Bomb };
   private MoleType moleType;
   private float hardRate = 0.25f;
   private float bombRate = 0f;
-  private int lives;
+  private int moleHealth;
   private int moleIndex = 0;
-
-  // Player Parameters
-  [Header("Player")]
-  private PlayerAttack playerAttack;
 
   private IEnumerator ShowHide(Vector2 start, Vector2 end)
   {
@@ -114,13 +110,10 @@ public class Mole : MonoBehaviour
 
   private void OnTriggerEnter2D(Collider2D collision)
   {
-    Debug.Log("Mole: OnTriggerEnter2D was called by " + collision.gameObject.name);
+    if (!hittable) return;
 
-    // if (!hittable) return;
-
-    if (collision.gameObject.CompareTag("Weapon") && playerAttack != null && playerAttack.IsSwinging)
+    if (collision.gameObject.CompareTag("Weapon") && attackManager != null && attackManager.IsPlayerSwinging)
     {
-      Debug.Log("Mole: Collision is with a Weapon");
       switch (moleType)
       {
         case MoleType.Standard:
@@ -131,18 +124,27 @@ public class Mole : MonoBehaviour
           hittable = false;
           break;
         case MoleType.HardHat:
-          if (lives == 2)
+          if (moleHealth > 0)
           {
-            spriteRenderer.sprite = moleHatBroken;
-            lives--;
-          }
-          else
-          {
-            spriteRenderer.sprite = moleHatHit;
-            gameManager.AddScore(moleIndex);
-            StopAllCoroutines();
-            StartCoroutine(QuickHide());
-            hittable = false;
+            attackManager.DealDamage(moleHealth);
+            moleHealth = attackManager.damagedHealth;
+
+            if (moleHealth <= 0)
+            {
+              spriteRenderer.sprite = moleHit;
+              gameManager.AddScore(moleIndex);
+              StopAllCoroutines();
+              StartCoroutine(QuickHide());
+              hittable = false;
+            }
+            else if (moleHealth > 0)
+            {
+              spriteRenderer.sprite = moleHatBroken;
+            }
+            else
+            {
+              spriteRenderer.sprite = moleHatHit;
+            }
           }
           break;
         case MoleType.Bomb:
@@ -172,14 +174,14 @@ public class Mole : MonoBehaviour
         // Create a hard one.
         moleType = MoleType.HardHat;
         spriteRenderer.sprite = moleHardHat;
-        lives = 2;
+        moleHealth = 10;
       }
       else
       {
         // Create a standard one.
         moleType = MoleType.Standard;
         spriteRenderer.sprite = mole;
-        lives = 1;
+        moleHealth = 5;
       }
     }
     // Mark as hittable so we can register an onclick event.
@@ -212,6 +214,11 @@ public class Mole : MonoBehaviour
     boxSize = boxCollider2D.size;
     boxOffsetHidden = new Vector2(boxOffset.x, -startPosition.y / 2f);
     boxSizeHidden = new Vector2(boxSize.x, 0f);
+    attackManager = FindFirstObjectByType<AttackManager>();
+    if (attackManager == null)
+    {
+      Debug.LogError("AttackManager not found in the scene!");
+    }
   }
 
   public void Activate(int level)

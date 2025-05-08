@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Rigidbody2D playerRigidbody;
     [SerializeField] private Collider2D playerCollider;
+    [SerializeField] private AttackManager attackManager;
     private Vector2 moveDirection = Vector2.zero;
     private SpriteRenderer spriteRenderer;
 
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        attackManager = GetComponent<AttackManager>();
     }
 
     // Update is called once per frame
