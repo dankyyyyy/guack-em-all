@@ -282,6 +282,7 @@ MonoBehaviour:
   moleHit: {fileID: -6583822162611181108, guid: 5d16d21e1ced7814d8e583217197c011, type: 3}
   moleHatHit: {fileID: -5312203366874672313, guid: e7eb46e4cca3e1f4784511a9e278c3a8, type: 3}
   gameManager: {fileID: 0}
+  attackManager: {fileID: 0}
 --- !u!61 &8536179682527133110
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -447,7 +448,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6622357226697071798}
   - component: {fileID: 8525204682040915383}
-  - component: {fileID: 372480830344359091}
   m_Layer: 0
   m_Name: CadeHole
   m_TagString: Enemy
@@ -486,18 +486,3 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortAtRoot: 0
---- !u!114 &372480830344359091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8166115591385215984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c04c6bad4b698124a81cfca0966bb708, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 10
-  health: 10
-  deathSound: {fileID: 0}

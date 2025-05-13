@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 2561097198377311774}
   - component: {fileID: 6165370509912777071}
   - component: {fileID: 4987770991433190941}
-  - component: {fileID: 9089704605418411743}
-  - component: {fileID: 7094795851925783049}
   - component: {fileID: 2157568559373357283}
   m_Layer: 0
   m_Name: armwithchicken_0
@@ -182,33 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2f1cfe123892940b5af86e980ce390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9089704605418411743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136547809113532743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a28e4e60dac28b141bfb837aa0f62ef7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trailRenderer: {fileID: 2157568559373357283}
-  swipeParticles: {fileID: 9003414445806575870}
---- !u!114 &7094795851925783049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136547809113532743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01e088827da03434f8d1036820219e8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
 --- !u!96 &2157568559373357283
 TrailRenderer:
   serializedVersion: 3
@@ -5204,7 +5175,6 @@ GameObject:
   - component: {fileID: 1399458781874361616}
   - component: {fileID: 2451209120727511876}
   - component: {fileID: 8101683695650909102}
-  - component: {fileID: 3034016555577055121}
   m_Layer: 0
   m_Name: ElGuaco
   m_TagString: Untagged
@@ -5323,16 +5293,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
---- !u!114 &3034016555577055121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8714882004423977125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01e088827da03434f8d1036820219e8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
+  playerRigidbody: {fileID: 0}
+  playerCollider: {fileID: 0}
+  attackManager: {fileID: 0}
