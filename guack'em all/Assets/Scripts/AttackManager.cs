@@ -11,6 +11,9 @@ public class AttackManager : MonoBehaviour
     [SerializeField] private int weaponDamage = 5; // Set the damage value for the weapon; TODO Replace with a dynamic variable, pulling from the currently held weapon.
     [HideInInspector] public int damagedHealth;
     [SerializeField] private Transform weaponTransform; // Assign the arm/weapon transform in the Inspector
+    [Header("Sound Effects")]
+    public AudioClip[] attackSounds; // Allows multiple sounds
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -26,6 +29,13 @@ public class AttackManager : MonoBehaviour
         {
             Debug.LogError("Weapon Transform not assigned in the Inspector!");
         }
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        audioSource.volume = 0.3f;
 
         if (trailRenderer != null)
         {
@@ -62,6 +72,8 @@ public class AttackManager : MonoBehaviour
                 swipeParticles.Play();
             }
 
+            PlayAttackSound();
+
             // Disable trail shortly after
             Invoke("StopTrail", swipeLength); // Adjust delay based on animation length
         }
@@ -81,7 +93,7 @@ public class AttackManager : MonoBehaviour
         //Debug.Log("Swing started!");
         StartCoroutine(EndSwingAfterDelay(swipeLength));
     }
-        IEnumerator EndSwingAfterDelay(float delay)
+    IEnumerator EndSwingAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         EndSwing();
@@ -96,5 +108,14 @@ public class AttackManager : MonoBehaviour
     {
         //Debug.Log("Dealing damage!");
         damagedHealth = targetHealth - weaponDamage;
+    }
+
+    void PlayAttackSound()
+    {
+        if (attackSounds.Length > 0)
+        {
+            AudioClip clip = attackSounds[Random.Range(0, attackSounds.Length)];
+            audioSource.PlayOneShot(clip);
+        }
     }
 }
