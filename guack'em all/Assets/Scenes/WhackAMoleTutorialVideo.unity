@@ -825,11 +825,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8783456933692681767, guid: 7ef57ce4dee72354395e80ec3fd96880, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.339
+      value: -1.45
       objectReference: {fileID: 0}
     - target: {fileID: 8783456933692681767, guid: 7ef57ce4dee72354395e80ec3fd96880, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.21
+      value: -1.43
       objectReference: {fileID: 0}
     - target: {fileID: 8783456933692681767, guid: 7ef57ce4dee72354395e80ec3fd96880, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1152,6 +1152,7 @@ MonoBehaviour:
   bombText: {fileID: 1503894620}
   timeText: {fileID: 1253899259}
   scoreText: {fileID: 1753272997}
+  startingTime: 30
 --- !u!4 &1490925528
 Transform:
   m_ObjectHideFlags: 0
