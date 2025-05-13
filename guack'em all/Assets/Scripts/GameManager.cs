@@ -1,11 +1,12 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
   [SerializeField] private List<Mole> moles;
 
   [Header("UI objects")]
-  [SerializeField] private GameObject playButton;
   [SerializeField] private GameObject gameUI;
   [SerializeField] private GameObject outOfTimeText;
   [SerializeField] private GameObject bombText;
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour {
   [SerializeField] private TMPro.TextMeshProUGUI scoreText;
 
   // Hardcoded - can be tuned in the inspector.
-  [SerializeField] private float startingTime = 30f;  
+  [SerializeField] private float startingTime = 30f;
 
   // Global variables
   private float timeRemaining;
@@ -21,15 +22,34 @@ public class GameManager : MonoBehaviour {
   private int score;
   private bool playing = false;
 
-  // This is public so the play button can see it.
-  public void StartGame() {
+  // Delayed start to allow for other objects to Awake - 
+  // TODO Remove this logic when proper Scene Management has been implemented
+  public void StartGameWithDelay()
+  {
+    StartCoroutine(DelayedCall(0.5f, StartGame));
+  }
+
+  private IEnumerator DelayedCall(float delaySeconds, System.Action methodToCall)
+  {
+    yield return new WaitForSeconds(delaySeconds);
+    methodToCall?.Invoke();
+  }
+
+  void Start()
+  {
+    StartGameWithDelay();
+  }
+  //----------------------------------------------------------------------------
+
+  public void StartGame()
+  {
     // Hide/show the UI elements we don't/do want to see.
-    playButton.SetActive(false);
     outOfTimeText.SetActive(false);
     bombText.SetActive(false);
     gameUI.SetActive(true);
     // Hide all the visible moles.
-    for (int i = 0; i < moles.Count; i++) {
+    for (int i = 0; i < moles.Count; i++)
+    {
       moles[i].Hide();
       moles[i].SetIndex(i);
     }
@@ -42,38 +62,47 @@ public class GameManager : MonoBehaviour {
     playing = true;
   }
 
-  public void GameOver(int type) {
+  public void GameOver(int type)
+  {
     // Show the message.
-    if (type == 0) {
+    if (type == 0)
+    {
       outOfTimeText.SetActive(true);
-    } else {
+    }
+    else
+    {
       bombText.SetActive(true);
     }
     // Hide all moles.
-    foreach (Mole mole in moles) {
+    foreach (Mole mole in moles)
+    {
       mole.StopGame();
     }
     // Stop the game and show the start UI.
     playing = false;
-    playButton.SetActive(true);
   }
 
   // Update is called once per frame
-  void Update() {
-    if (playing) {
+  void Update()
+  {
+    if (playing)
+    {
       // Update time.
       timeRemaining -= Time.deltaTime;
-      if (timeRemaining <= 0) {
+      if (timeRemaining <= 0)
+      {
         timeRemaining = 0;
         GameOver(0);
       }
       timeText.text = $"{(int)timeRemaining / 60}:{(int)timeRemaining % 60:D2}";
       // Check if we need to start any more moles.
-      if (currentMoles.Count <= (score / 10)) {
+      if (currentMoles.Count <= (score / 10))
+      {
         // Choose a random mole.
         int index = Random.Range(0, moles.Count);
         // Doesn't matter if it's already doing something, we'll just try again next frame.
-        if (!currentMoles.Contains(moles[index])) {
+        if (!currentMoles.Contains(moles[index]))
+        {
           currentMoles.Add(moles[index]);
           moles[index].Activate(score / 10);
         }
@@ -81,7 +110,8 @@ public class GameManager : MonoBehaviour {
     }
   }
 
-  public void AddScore(int moleIndex) {
+  public void AddScore(int moleIndex)
+  {
     // Add and update score.
     score += 1;
     scoreText.text = $"{score}";
@@ -91,8 +121,10 @@ public class GameManager : MonoBehaviour {
     currentMoles.Remove(moles[moleIndex]);
   }
 
-  public void Missed(int moleIndex, bool isMole) {
-    if (isMole) {
+  public void Missed(int moleIndex, bool isMole)
+  {
+    if (isMole)
+    {
       // Decrease time by a little bit.
       timeRemaining -= 2;
     }
