@@ -4,15 +4,12 @@ using UnityEngine;
 public class AttackManager : MonoBehaviour
 {
     private Animator weaponAnimator;
-    public TrailRenderer trailRenderer;
-    public ParticleSystem swipeParticles;
-    private float swipeLength = 0.3f; // Length of the attack swipe
+    private TrailRenderer currentTrailRenderer;
+    private ParticleSystem currentSwipeParticles;
     public bool IsPlayerSwinging { get; private set; } = false;
-    [SerializeField] private int weaponDamage = 5; // Set the damage value for the weapon; TODO Replace with a dynamic variable, pulling from the currently held weapon.
-    [HideInInspector] public int damagedHealth;
     [SerializeField] private Transform weaponTransform; // Assign the arm/weapon transform in the Inspector
-    [Header("Sound Effects")]
-    public AudioClip[] attackSounds; // Allows multiple sounds
+    [SerializeField] private WeaponData currentWeaponData; // Assign the current weapon's data in the Inspector
+    [HideInInspector] public int damagedHealth;
     private AudioSource audioSource;
 
     void Start()
@@ -23,6 +20,11 @@ public class AttackManager : MonoBehaviour
             if (weaponAnimator == null)
             {
                 Debug.LogError("Animator not found on the weapon child object!");
+            }
+            // Apply Animator Override if provided in the Weapon Data
+            if (currentWeaponData != null && currentWeaponData.weaponAnimatorOverride != null && weaponAnimator != null)
+            {
+                weaponAnimator.runtimeAnimatorController = currentWeaponData.weaponAnimatorOverride;
             }
         }
         else
@@ -37,20 +39,34 @@ public class AttackManager : MonoBehaviour
         }
         audioSource.volume = 0.3f;
 
-        if (trailRenderer != null)
+        // Instantiate visual effects if prefabs are provided
+        if (currentWeaponData != null)
         {
-            trailRenderer.emitting = false;
-        }
+            if (currentWeaponData.trailPrefab != null && weaponTransform != null)
+            {
+                GameObject trailObject = Instantiate(currentWeaponData.trailPrefab, weaponTransform);
+                currentTrailRenderer = trailObject.GetComponent<TrailRenderer>();
+                if (currentTrailRenderer != null)
+                {
+                    currentTrailRenderer.emitting = false;
+                }
+            }
 
-        if (swipeParticles != null)
-        {
-            swipeParticles.Stop();
+            if (currentWeaponData.swipeParticlesPrefab != null && weaponTransform != null)
+            {
+                GameObject particlesObject = Instantiate(currentWeaponData.swipeParticlesPrefab, weaponTransform);
+                currentSwipeParticles = particlesObject.GetComponent<ParticleSystem>();
+                if (currentSwipeParticles != null)
+                {
+                    currentSwipeParticles.Stop();
+                }
+            }
         }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && currentWeaponData != null)
         {
             StartSwing();
 
@@ -61,37 +77,36 @@ public class AttackManager : MonoBehaviour
             }
 
             // Enable trail
-            if (trailRenderer != null)
+            if (currentTrailRenderer != null)
             {
-                trailRenderer.emitting = true;
+                currentTrailRenderer.emitting = true;
             }
 
             // Play particles
-            if (swipeParticles != null)
+            if (currentSwipeParticles != null)
             {
-                swipeParticles.Play();
+                currentSwipeParticles.Play();
             }
 
             PlayAttackSound();
 
             // Disable trail shortly after
-            Invoke("StopTrail", swipeLength); // Adjust delay based on animation length
+            Invoke("StopTrail", currentWeaponData.swingLength); // Use the swingLength from the current weapon data
         }
     }
 
     void StopTrail()
     {
-        if (trailRenderer != null)
+        if (currentTrailRenderer != null)
         {
-            trailRenderer.emitting = false;
+            currentTrailRenderer.emitting = false;
         }
     }
 
     public void StartSwing()
     {
         IsPlayerSwinging = true;
-        //Debug.Log("Swing started!");
-        StartCoroutine(EndSwingAfterDelay(swipeLength));
+        StartCoroutine(EndSwingAfterDelay(currentWeaponData.swingLength)); // Use swingLength from weapon data
     }
     IEnumerator EndSwingAfterDelay(float delay)
     {
@@ -101,20 +116,26 @@ public class AttackManager : MonoBehaviour
     public void EndSwing()
     {
         IsPlayerSwinging = false;
-        //Debug.Log("Swing ended!");
     }
 
     public void DealDamage(int targetHealth)
     {
-        //Debug.Log("Dealing damage!");
-        damagedHealth = targetHealth - weaponDamage;
+        if (currentWeaponData != null)
+        {
+            damagedHealth = targetHealth - currentWeaponData.damage; // Use damage from weapon data
+        }
+        else
+        {
+            Debug.LogError("No Weapon Data assigned to the Attack Manager!");
+            damagedHealth = targetHealth; // Avoid potential errors
+        }
     }
 
     void PlayAttackSound()
     {
-        if (attackSounds.Length > 0)
+        if (currentWeaponData != null && currentWeaponData.attackSounds.Length > 0)
         {
-            AudioClip clip = attackSounds[Random.Range(0, attackSounds.Length)];
+            AudioClip clip = currentWeaponData.attackSounds[Random.Range(0, currentWeaponData.attackSounds.Length)];
             audioSource.PlayOneShot(clip);
         }
     }

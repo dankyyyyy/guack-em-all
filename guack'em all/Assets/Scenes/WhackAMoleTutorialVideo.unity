@@ -216,11 +216,6 @@ CapsuleCollider2D:
   m_CorrespondingSourceObject: {fileID: 7282757861998790408, guid: 5cf5c79f314cd414fb0c34cb82d2e064, type: 3}
   m_PrefabInstance: {fileID: 2068219989}
   m_PrefabAsset: {fileID: 0}
---- !u!96 &337482781 stripped
-TrailRenderer:
-  m_CorrespondingSourceObject: {fileID: 5258204038823517996, guid: 5cf5c79f314cd414fb0c34cb82d2e064, type: 3}
-  m_PrefabInstance: {fileID: 2068219989}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &371109151 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
@@ -472,11 +467,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!198 &489792014 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 673068184083049058, guid: 5cf5c79f314cd414fb0c34cb82d2e064, type: 3}
-  m_PrefabInstance: {fileID: 2068219989}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &586633805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -571,13 +561,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660ec54c80a7d6681ab59472038022af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trailRenderer: {fileID: 337482781}
-  swipeParticles: {fileID: 489792014}
-  weaponDamage: 5
-  damagedHealth: 0
   weaponTransform: {fileID: 337482779}
-  attackSounds:
-  - {fileID: 8300000, guid: 2112997c43e19a64d823c0a4c7d6279e, type: 3}
+  currentWeaponData: {fileID: 11400000, guid: 27debcddd416b83418c024a819e60ef0, type: 2}
+  damagedHealth: 0
 --- !u!4 &725810665
 Transform:
   m_ObjectHideFlags: 0
