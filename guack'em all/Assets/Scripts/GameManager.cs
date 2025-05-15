@@ -13,6 +13,13 @@ public class GameManager : MonoBehaviour
   [SerializeField] private TMPro.TextMeshProUGUI timeText;
   [SerializeField] private TMPro.TextMeshProUGUI scoreText;
 
+  [SerializeField] private TMPro.TextMeshProUGUI waveText;
+  [SerializeField] private TMPro.TextMeshProUGUI nextWaveCountdownText;
+  [SerializeField] private List<int> waveScoreThresholds = new List<int> { 10, 20, 30 };
+  [SerializeField] private TMPro.TextMeshProUGUI scoreProgressText;
+
+
+
   // Hardcoded - can be tuned in the inspector.
   [SerializeField] private float startingTime = 30f;
 
@@ -21,6 +28,10 @@ public class GameManager : MonoBehaviour
   private HashSet<Mole> currentMoles = new HashSet<Mole>();
   private int score;
   private bool playing = false;
+  private int currentWave = 0;
+private int maxWaves = 3;
+
+
 
   // Delayed start to allow for other objects to Awake - 
   // TODO Remove this logic when proper Scene Management has been implemented
@@ -37,30 +48,117 @@ public class GameManager : MonoBehaviour
 
   void Start()
   {
+    waveText.gameObject.SetActive(false);                
+    nextWaveCountdownText.gameObject.SetActive(false);
     StartGameWithDelay();
   }
   //----------------------------------------------------------------------------
 
   public void StartGame()
-  {
-    // Hide/show the UI elements we don't/do want to see.
+{
     outOfTimeText.SetActive(false);
     bombText.SetActive(false);
     gameUI.SetActive(true);
-    // Hide all the visible moles.
+    waveText.gameObject.SetActive(true); 
+    nextWaveCountdownText.gameObject.SetActive(false);
+
     for (int i = 0; i < moles.Count; i++)
     {
-      moles[i].Hide();
-      moles[i].SetIndex(i);
+        moles[i].Hide();
+        moles[i].SetIndex(i);
     }
-    // Remove any old game state.
+
     currentMoles.Clear();
-    // Start with 30 seconds.
-    timeRemaining = startingTime;
     score = 0;
     scoreText.text = "0";
-    playing = true;
-  }
+    currentWave = 0;
+    StartCoroutine(WaveRoutine());
+}
+
+private IEnumerator WaveRoutine()
+{
+    while (currentWave < maxWaves)
+    {
+        // Set progress text before incrementing currentWave
+        int waveGoal = waveScoreThresholds.Count >= currentWave + 1
+            ? waveScoreThresholds[currentWave]
+            : waveScoreThresholds[waveScoreThresholds.Count - 1];
+
+        scoreProgressText.text = $"Wave Score: 0 / {waveGoal}";
+
+        // Increment wave after setting the UI
+        currentWave++;
+        waveText.text = $"Wave {currentWave} of {maxWaves}";
+        Debug.Log($"Wave {currentWave} started!");
+
+        nextWaveCountdownText.gameObject.SetActive(false);
+        playing = true;
+        timeRemaining = 30f;
+        int scoreAtWaveStart = score;
+
+        // Run the wave
+        while (timeRemaining > 0f)
+        {
+            timeRemaining -= Time.deltaTime;
+            timeText.text = $"{(int)timeRemaining / 60}:{(int)timeRemaining % 60:D2}";
+
+            if (currentMoles.Count <= (score / 10))
+            {
+                int index = Random.Range(0, moles.Count);
+                if (!currentMoles.Contains(moles[index]))
+                {
+                    currentMoles.Add(moles[index]);
+                    moles[index].Activate(score / 10);
+                }
+            }
+
+            yield return null;
+        }
+
+        // Handle the wave score and progress
+        int waveScore = score - scoreAtWaveStart;
+        if (waveScore < waveGoal)
+        {
+            Debug.Log($"Wave {currentWave} failed. Needed {waveGoal}, got {waveScore}.");
+            GameOver(0);
+            yield break;
+        }
+
+        // Wave finished
+        playing = false;
+        timeRemaining = 0f; // <-- Set this explicitly to 0
+        timeText.text = "0:00"; // <-- Set the timer text to a clean value
+        currentMoles.Clear();
+
+        // Hide all moles at the end of the wave
+        foreach (Mole mole in moles)
+        {
+            mole.StopGame();
+            mole.Hide();
+        }
+
+        // Start the interval between waves
+        if (currentWave < maxWaves)
+        {
+            Debug.Log("Wave ended! Next wave starting in 10 seconds...");
+
+            // Show the countdown text only during the interval
+            nextWaveCountdownText.gameObject.SetActive(true);
+            for (int i = 10; i > 0; i--)
+            {
+                nextWaveCountdownText.text = $"Next wave in: {i}";
+                yield return new WaitForSeconds(1f);
+            }
+
+            // Hide the countdown text after the interval
+            nextWaveCountdownText.gameObject.SetActive(false);
+        }
+    }
+
+    // All waves are done
+    GameOver(0);
+}
+
 
   public void GameOver(int type)
   {
@@ -84,50 +182,54 @@ public class GameManager : MonoBehaviour
 
   // Update is called once per frame
   void Update()
-  {
+{
     if (playing)
     {
-      // Update time.
-      timeRemaining -= Time.deltaTime;
-      if (timeRemaining <= 0)
-      {
-        timeRemaining = 0;
-        GameOver(0);
-      }
-      timeText.text = $"{(int)timeRemaining / 60}:{(int)timeRemaining % 60:D2}";
-      // Check if we need to start any more moles.
-      if (currentMoles.Count <= (score / 10))
-      {
-        // Choose a random mole.
-        int index = Random.Range(0, moles.Count);
-        // Doesn't matter if it's already doing something, we'll just try again next frame.
-        if (!currentMoles.Contains(moles[index]))
+        timeText.text = $"{(int)timeRemaining / 60}:{(int)timeRemaining % 60:D2}";
+        if (currentMoles.Count <= (score / 10))
         {
-          currentMoles.Add(moles[index]);
-          moles[index].Activate(score / 10);
+            int index = Random.Range(0, moles.Count);
+            if (!currentMoles.Contains(moles[index]))
+            {
+                currentMoles.Add(moles[index]);
+                moles[index].Activate(score / 10);
+            }
         }
-      }
     }
-  }
+}
+
 
   public void AddScore(int moleIndex)
   {
     // Add and update score.
     score += 1;
     scoreText.text = $"{score}";
+    
     // Increase time by a little bit.
     timeRemaining += 1;
     // Remove from active moles.
     currentMoles.Remove(moles[moleIndex]);
+    // Calculate wave progress
+    int waveScore = score;
+    if (currentWave > 1)
+    {
+        for (int i = 0; i < currentWave - 1; i++)
+        {
+            waveScore -= waveScoreThresholds[i];
+        }
+    }
+
+    int waveGoal = waveScoreThresholds.Count >= currentWave 
+        ? waveScoreThresholds[currentWave - 1]
+        : waveScoreThresholds[waveScoreThresholds.Count - 1];
+
+    // Update UI
+   scoreProgressText.text = $"<color=green>Wave Score: {waveScore}</color> / {waveGoal}";
   }
 
   public void Missed(int moleIndex, bool isMole)
   {
-    if (isMole)
-    {
-      // Decrease time by a little bit.
-      timeRemaining -= 2;
-    }
+    
     // Remove from active moles.
     currentMoles.Remove(moles[moleIndex]);
   }
