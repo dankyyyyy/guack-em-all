@@ -1,0 +1,417 @@
+fileFormatVersion: 2
+guid: 0c8b165cb0aa62245b4daeaddaff92e6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4917899683167948183
+    second: ELGUAC SPRITE SHEET_0
+  - first:
+      213: -1286410271536310278
+    second: ELGUAC SPRITE SHEET_1
+  - first:
+      213: -1542661705630487514
+    second: ELGUAC SPRITE SHEET_2
+  - first:
+      213: -6672117642546399962
+    second: ELGUAC SPRITE SHEET_3
+  - first:
+      213: -9063071722854028313
+    second: ELGUAC SPRITE SHEET_4
+  - first:
+      213: -1022458675092551675
+    second: ELGUAC SPRITE SHEET_5
+  - first:
+      213: -6597550449186312635
+    second: ELGUAC SPRITE SHEET_6
+  - first:
+      213: 480179090991107854
+    second: ELGUAC SPRITE SHEET_7
+  - first:
+      213: 9041275917247015600
+    second: ELGUAC SPRITE SHEET_8
+  - first:
+      213: -6925615010363040253
+    second: ELGUAC SPRITE SHEET_9
+  - first:
+      213: -4749529023607905309
+    second: ELGUAC SPRITE SHEET_10
+  - first:
+      213: 7429711659058543777
+    second: ELGUAC SPRITE SHEET_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ELGUAC SPRITE SHEET_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 969
+        width: 172
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 962b4c75b4c10cbb0800000000000000
+      internalID: -4917899683167948183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ELGUAC SPRITE SHEET_1
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 969
+        width: 170
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af71aa97ca0c52ee0800000000000000
+      internalID: -1286410271536310278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ELGUAC SPRITE SHEET_2
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 969
+        width: 169
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62ceb432a5d579ae0800000000000000
+      internalID: -1542661705630487514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ELGUAC SPRITE SHEET_3
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 655
+        width: 170
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 625b760ca50e763a0800000000000000
+      internalID: -6672117642546399962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ELGUAC SPRITE SHEET_4
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 655
+        width: 168
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ebe5694940893280800000000000000
+      internalID: -9063071722854028313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ELGUAC SPRITE SHEET_5
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 664
+        width: 168
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5088791904f7fc1f0800000000000000
+      internalID: -1022458675092551675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ELGUAC SPRITE SHEET_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 376
+        width: 197
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ee78062dac074a0800000000000000
+      internalID: -6597550449186312635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ELGUAC SPRITE SHEET_7
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 363
+        width: 181
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f4813d650f9a600800000000000000
+      internalID: 480179090991107854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ELGUAC SPRITE SHEET_8
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 363
+        width: 181
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ba6dc34b80197d70800000000000000
+      internalID: 9041275917247015600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ELGUAC SPRITE SHEET_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 73
+        width: 197
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30e923077d543ef90800000000000000
+      internalID: -6925615010363040253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ELGUAC SPRITE SHEET_10
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 60
+        width: 181
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e361716488461eb0800000000000000
+      internalID: -4749529023607905309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ELGUAC SPRITE SHEET_11
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 57
+        width: 181
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ac33cdb363ab1760800000000000000
+      internalID: 7429711659058543777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
