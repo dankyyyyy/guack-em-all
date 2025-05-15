@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      new el guaco arm_0: 1534659427891463240
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
