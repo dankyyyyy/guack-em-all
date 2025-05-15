@@ -7,29 +7,21 @@ public class AttackManager : MonoBehaviour
     private TrailRenderer currentTrailRenderer;
     private ParticleSystem currentSwipeParticles;
     public bool IsPlayerSwinging { get; private set; } = false;
-    [SerializeField] private Transform weaponTransform; // Assign the arm/weapon transform in the Inspector
-    [SerializeField] private WeaponData currentWeaponData; // Assign the current weapon's data in the Inspector
+    [SerializeField] private Transform weaponTransform; // The attachment point, not necessarily the weapon itself anymore
+    [SerializeField] private WeaponData currentWeaponData; // Assign the current weapon's data in the Inspector (can be managed by WeaponEquipper)
     [HideInInspector] public int damagedHealth;
     private AudioSource audioSource;
 
+    private WeaponEquipper weaponEquipper; // Reference to the WeaponEquipper script
+    
+
     void Start()
     {
-        if (weaponTransform != null)
+        weaponEquipper = FindFirstObjectByType<WeaponEquipper>(); // Assuming WeaponEquipper is on the player or a parent
+
+        if (weaponEquipper == null)
         {
-            weaponAnimator = weaponTransform.GetComponent<Animator>();
-            if (weaponAnimator == null)
-            {
-                Debug.LogError("Animator not found on the weapon child object!");
-            }
-            // Apply Animator Override if provided in the Weapon Data
-            if (currentWeaponData != null && currentWeaponData.weaponAnimatorOverride != null && weaponAnimator != null)
-            {
-                weaponAnimator.runtimeAnimatorController = currentWeaponData.weaponAnimatorOverride;
-            }
-        }
-        else
-        {
-            Debug.LogError("Weapon Transform not assigned in the Inspector!");
+            Debug.LogError("WeaponEquipper not found on the player or parent!");
         }
 
         audioSource = GetComponent<AudioSource>();
@@ -39,34 +31,47 @@ public class AttackManager : MonoBehaviour
         }
         audioSource.volume = 0.3f;
 
-        // Instantiate visual effects if prefabs are provided
-        if (currentWeaponData != null)
-        {
-            if (currentWeaponData.trailPrefab != null && weaponTransform != null)
-            {
-                GameObject trailObject = Instantiate(currentWeaponData.trailPrefab, weaponTransform);
-                currentTrailRenderer = trailObject.GetComponent<TrailRenderer>();
-                if (currentTrailRenderer != null)
-                {
-                    currentTrailRenderer.emitting = false;
-                }
-            }
+        // Initialize based on the currently equipped weapon (if any at start)
+        UpdateWeaponComponents();
+    }
 
-            if (currentWeaponData.swipeParticlesPrefab != null && weaponTransform != null)
+    // Call this method whenever the equipped weapon changes
+    public void UpdateWeaponComponents()
+    {
+        if (weaponEquipper != null && weaponEquipper.currentWeaponInstance != null)
+        {
+            weaponAnimator = weaponEquipper.currentWeaponInstance.GetComponent<Animator>();
+            currentTrailRenderer = weaponEquipper.currentWeaponInstance.GetComponent<TrailRenderer>();
+            currentSwipeParticles = weaponEquipper.currentWeaponInstance.GetComponent<ParticleSystem>(); // Assuming particles are on the weapon prefab too
+
+            if (weaponAnimator == null)
             {
-                GameObject particlesObject = Instantiate(currentWeaponData.swipeParticlesPrefab, weaponTransform);
-                currentSwipeParticles = particlesObject.GetComponent<ParticleSystem>();
-                if (currentSwipeParticles != null)
-                {
-                    currentSwipeParticles.Stop();
-                }
+                Debug.LogWarning("Animator not found on the equipped weapon!");
             }
+            if (currentTrailRenderer != null)
+            {
+                currentTrailRenderer.emitting = false;
+            }
+            if (currentSwipeParticles != null)
+            {
+                currentSwipeParticles.Stop();
+            }
+            if (currentWeaponData != null && currentWeaponData.weaponAnimatorOverride != null && weaponAnimator != null)
+            {
+                weaponAnimator.runtimeAnimatorController = currentWeaponData.weaponAnimatorOverride;
+            }
+        }
+        else
+        {
+            weaponAnimator = null;
+            currentTrailRenderer = null;
+            currentSwipeParticles = null;
         }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && currentWeaponData != null)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             StartSwing();
 
@@ -91,7 +96,7 @@ public class AttackManager : MonoBehaviour
             PlayAttackSound();
 
             // Disable trail shortly after
-            Invoke("StopTrail", currentWeaponData.swingLength); // Use the swingLength from the current weapon data
+            Invoke("StopTrail", currentWeaponData.swingLength);
         }
     }
 
@@ -106,7 +111,7 @@ public class AttackManager : MonoBehaviour
     public void StartSwing()
     {
         IsPlayerSwinging = true;
-        StartCoroutine(EndSwingAfterDelay(currentWeaponData.swingLength)); // Use swingLength from weapon data
+        StartCoroutine(EndSwingAfterDelay(currentWeaponData.swingLength));
     }
     IEnumerator EndSwingAfterDelay(float delay)
     {
@@ -122,12 +127,12 @@ public class AttackManager : MonoBehaviour
     {
         if (currentWeaponData != null)
         {
-            damagedHealth = targetHealth - currentWeaponData.damage; // Use damage from weapon data
+            damagedHealth = targetHealth - currentWeaponData.damage;
         }
         else
         {
             Debug.LogError("No Weapon Data assigned to the Attack Manager!");
-            damagedHealth = targetHealth; // Avoid potential errors
+            damagedHealth = targetHealth;
         }
     }
 
