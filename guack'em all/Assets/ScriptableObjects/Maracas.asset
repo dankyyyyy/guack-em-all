@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a609ed75d292f46a6625fffb6dcef7, type: 3}
   m_Name: Maracas
   m_EditorClassIdentifier: 
-  weaponName: Maracas
-  damage: 10
-  swingSpeed: 0.3
-  swingLength: 0.5
-  weaponAnimatorOverride: {fileID: 0}
-  attackSounds:
-  - {fileID: 8300000, guid: 2112997c43e19a64d823c0a4c7d6279e, type: 3}
+  weaponName: New Weapon
+  damage: 1
+  swingSpeed: 0.5
+  swingLength: 0.3
+  attackSounds: []
   trailPrefab: {fileID: 0}
   swipeParticlesPrefab: {fileID: 0}
+  weaponSprite: {fileID: 0}
+  weaponAnimatorController: {fileID: 0}
+  weaponAnimatorOverride: {fileID: 0}
+  weaponPrefab: {fileID: 0}
