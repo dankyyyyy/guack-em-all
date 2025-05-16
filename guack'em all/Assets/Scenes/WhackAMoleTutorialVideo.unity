@@ -1454,8 +1454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660ec54c80a7d6681ab59472038022af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponSocket: {fileID: 114833663}
-  currentWeapon: {fileID: 11400000, guid: 77700539d02e47541b2644731191d372, type: 2}
+  currentWeapon: {fileID: 11400000, guid: 6875afbddde488343b303235d1453e31, type: 2}
   weaponTransform: {fileID: 114833664}
   weaponAnimator: {fileID: 114833672}
   weaponAudioSource: {fileID: 0}
@@ -1463,6 +1462,9 @@ MonoBehaviour:
   - {fileID: 0}
   weaponSpriteRenderer: {fileID: 114833669}
   damagedHealth: 0
+  Cactus: 
+  Maracas: 
+  Chicken: 
 --- !u!1001 &1677590648
 PrefabInstance:
   m_ObjectHideFlags: 0

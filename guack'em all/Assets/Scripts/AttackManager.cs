@@ -4,16 +4,26 @@ using UnityEngine;
 public class AttackManager : MonoBehaviour
 {
     public bool IsPlayerSwinging { get; private set; } = false;
-    [SerializeField] private WeaponSO currentWeapon; // Assign the current weapon's data in the Inspector
+    [SerializeField] public WeaponSO currentWeapon;
     [SerializeField] private Transform weaponTransform;
     [SerializeField] private Animator weaponAnimator;
     [SerializeField] private AudioSource weaponAudioSource;
     [SerializeField] private AudioClip[] attackSounds;
     //[SerializeField] private TrailRenderer weaponTrail;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
-
-
     public int damagedHealth;
+
+    [Header("Weapons")]
+    [SerializeField] private string Cactus;
+    [SerializeField] private string Maracas;
+    [SerializeField] private string Chicken;
+
+    public void EquipWeapon(WeaponSO newWeapon)
+    {
+        currentWeapon = newWeapon;
+        UpdateWeaponVisuals();
+        attackSounds = currentWeapon.attackSounds; // Update attack sounds when weapon changes
+    }
 
     void Start()
     {
@@ -30,6 +40,48 @@ public class AttackManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && currentWeapon != null && IsPlayerSwinging == false)
         {
             StartSwing();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            WeaponSO loadedWeapon = Resources.Load<WeaponSO>("Cactus");
+            if (loadedWeapon != null)
+            {
+                EquipWeapon(loadedWeapon);
+                Debug.Log("Equipped Weapon 1: " + loadedWeapon.name);
+            }
+            else
+            {
+                Debug.LogError("Could not load weapon: " + Cactus + ". Make sure it's in a 'Resources' folder.");
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            WeaponSO loadedWeapon = Resources.Load<WeaponSO>("Maracas");
+            if (loadedWeapon != null)
+            {
+                EquipWeapon(loadedWeapon);
+                Debug.Log("Equipped Weapon 2: " + loadedWeapon.name);
+            }
+            else
+            {
+                Debug.LogError("Could not load weapon: " + Maracas + ". Make sure it's in a 'Resources' folder.");
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            WeaponSO loadedWeapon = Resources.Load<WeaponSO>("Chicken");
+            if (loadedWeapon != null)
+            {
+                EquipWeapon(loadedWeapon);
+                Debug.Log("Equipped Weapon 3: " + loadedWeapon.name);
+            }
+            else
+            {
+                Debug.LogError("Could not load weapon: " + Chicken + ". Make sure it's in a 'Resources' folder.");
+            }
         }
     }
 
@@ -117,5 +169,21 @@ public class AttackManager : MonoBehaviour
             AudioClip clip = attackSounds[Random.Range(0, attackSounds.Length)];
             weaponAudioSource.PlayOneShot(clip);
         }
+    }
+
+    private void UpdateWeaponVisuals()
+    {
+        if (currentWeapon == null) return;
+
+        if (weaponSpriteRenderer != null && currentWeapon.weaponSprite != null)
+        {
+            weaponSpriteRenderer.sprite = currentWeapon.weaponSprite;
+        }
+
+        if (weaponAudioSource != null && currentWeapon.attackSounds != null)
+        {
+            attackSounds = currentWeapon.attackSounds;
+        }
+        //weaponTrail = currentWeapon.weaponTrail;
     }
 }
