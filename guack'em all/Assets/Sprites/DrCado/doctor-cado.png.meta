@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      doctor-cado_0: 6157326444560343071
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

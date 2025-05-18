@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      chicken-smacker_0: -3238923461060691047
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -12,11 +12,9 @@ public class AttackManager : MonoBehaviour
     //[SerializeField] private TrailRenderer weaponTrail;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
     public int damagedHealth;
-
-    [Header("Weapons")]
-    [SerializeField] private string Cactus;
-    [SerializeField] private string Maracas;
-    [SerializeField] private string Chicken;
+    private string Cactus;
+    private string Maracas;
+    private string Chicken;
 
     public void EquipWeapon(WeaponSO newWeapon)
     {

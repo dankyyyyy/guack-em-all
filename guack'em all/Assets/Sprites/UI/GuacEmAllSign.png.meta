@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      GuacEmAllSign_0: -610932257993070249
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
