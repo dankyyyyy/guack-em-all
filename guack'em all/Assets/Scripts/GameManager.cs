@@ -75,7 +75,7 @@ private int maracas = 0;
 
 
 
-  // Delayed start to allow for other objects to Awake - 
+  // Delayed start to allow for other objects to Awake -
   // TODO Remove this logic when proper Scene Management has been implemented
   public void StartGameWithDelay()
   {
@@ -90,7 +90,7 @@ private int maracas = 0;
 
   void Start()
   {
-    waveText.gameObject.SetActive(false);                
+    waveText.gameObject.SetActive(false);
     nextWaveCountdownText.gameObject.SetActive(false);
     shopUI.SetActive(false);
     StartGameWithDelay();
@@ -102,7 +102,7 @@ private int maracas = 0;
     outOfTimeText.SetActive(false);
     bombText.SetActive(false);
     gameUI.SetActive(true);
-    waveText.gameObject.SetActive(true); 
+    waveText.gameObject.SetActive(true);
     nextWaveCountdownText.gameObject.SetActive(false);
 
     for (int i = 0; i < moles.Count; i++)
@@ -311,7 +311,7 @@ public void BuyMaracas()
     // Add and update score.
     score += 1 * multiplier;
     scoreText.text = $"{score}";
-    
+
     // Increase time by a little bit.
     timeRemaining += 1;
     // Remove from active moles.
@@ -326,7 +326,7 @@ public void BuyMaracas()
         }
     }
 
-    int waveGoal = waveScoreThresholds.Count >= currentWave 
+    int waveGoal = waveScoreThresholds.Count >= currentWave
         ? waveScoreThresholds[currentWave - 1]
         : waveScoreThresholds[waveScoreThresholds.Count - 1];
 
@@ -336,7 +336,7 @@ public void BuyMaracas()
 
   public void Missed(int moleIndex, bool isMole)
   {
-     streakCount = 0;
+    streakCount = 0;
     multiplier = 1;
     // Remove from active moles.
     currentMoles.Remove(moles[moleIndex]);
