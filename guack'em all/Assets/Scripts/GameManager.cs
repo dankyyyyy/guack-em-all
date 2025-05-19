@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
   [SerializeField] private GameObject gameUI;
   [SerializeField] private GameObject outOfTimeText;
   [SerializeField] private GameObject bombText;
+  [SerializeField] private GameObject timeHeader;
   [SerializeField] private TMPro.TextMeshProUGUI timeText;
   [SerializeField] private TMPro.TextMeshProUGUI scoreText;
 
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
   [SerializeField] private TMPro.TextMeshProUGUI nextWaveCountdownText;
   [SerializeField] private List<int> waveScoreThresholds = new List<int> { 10, 20, 30 };
   [SerializeField] private TMPro.TextMeshProUGUI scoreProgressText;
+  [SerializeField] private TextMeshProUGUI waveCompletedText;
 
   [Header("Shop UI")]
 [SerializeField] private GameObject shopUI;
@@ -41,8 +43,10 @@ public void SkipShop()
     {
         StopCoroutine(nextWaveCoroutine);
     }
+
     shopUI.SetActive(false);
     nextWaveCountdownText.gameObject.SetActive(false);
+    hasPurchased = false; // <-- MAKE SURE THIS IS HERE TOO
     nextWaveCoroutine = StartCoroutine(WaveRoutine());
 }
 
@@ -72,6 +76,7 @@ private int maracas = 0;
   private const int streakThreshold = 2;
   // Optional cap on multiplier
   private const int maxMultiplier = 5;
+    private int waveScore = 0;
 
 
 
@@ -102,6 +107,7 @@ private int maracas = 0;
     outOfTimeText.SetActive(false);
     bombText.SetActive(false);
     gameUI.SetActive(true);
+    scoreText.gameObject.SetActive(false);
     waveText.gameObject.SetActive(true);
     nextWaveCountdownText.gameObject.SetActive(false);
 
@@ -137,7 +143,7 @@ private int maracas = 0;
       nextWaveCountdownText.gameObject.SetActive(false);
       playing = true;
       timeRemaining = 30f;
-      int scoreAtWaveStart = score;
+      waveScore = 0;
 
       // Run the wave
       while (timeRemaining > 0f)
@@ -159,7 +165,6 @@ private int maracas = 0;
       }
 
       // Handle the wave score and progress
-      int waveScore = score - scoreAtWaveStart;
       if (waveScore < waveGoal)
       {
         Debug.Log($"Wave {currentWave} failed. Needed {waveGoal}, got {waveScore}.");
@@ -179,10 +184,19 @@ private int maracas = 0;
         mole.StopGame();
         mole.Hide();
       }
+      waveCompletedText.gameObject.SetActive(true);
+waveCompletedText.text = $"Wave {currentWave} Completed!";
+yield return new WaitForSeconds(2f); // Show it for 2 seconds
+waveCompletedText.gameObject.SetActive(false);
 
       // Start the interval between waves
       if (currentWave < maxWaves)
       {
+        // Hide wave and time UI
+        waveText.gameObject.SetActive(false);
+        timeText.gameObject.SetActive(false);
+        scoreProgressText.gameObject.SetActive(false);
+        timeHeader.SetActive(false);
         // Show the shop UI
         shopUI.SetActive(true);
         hasPurchased = false;
@@ -198,8 +212,13 @@ private int maracas = 0;
 
         shopUI.SetActive(false);
         nextWaveCountdownText.gameObject.SetActive(false);
+         waveText.gameObject.SetActive(true);
+        scoreProgressText.gameObject.SetActive(true);
+    timeText.gameObject.SetActive(true);
+    timeHeader.SetActive(true); 
       }
     }
+
 
     // All waves are done
     GameOver(0);
@@ -207,23 +226,38 @@ private int maracas = 0;
   }
 private IEnumerator NextWaveCountdown()
 {
+    nextWaveCountdownText.gameObject.SetActive(true);
+
     for (int i = 10; i > 0; i--)
     {
-        nextWaveCountdownText.gameObject.SetActive(true);
         nextWaveCountdownText.text = $"Next wave in: {i}";
-        yield return new WaitForSeconds(1f);
+
+        if (i <= 5)
+        {
+            // Flicker effect for last 5 seconds
+            for (int j = 0; j < 4; j++) // 4 flickers = 1 second (0.25 * 4)
+            {
+                nextWaveCountdownText.enabled = !nextWaveCountdownText.enabled;
+                yield return new WaitForSeconds(0.25f);
+            }
+
+            // Ensure it's visible after flicker
+            nextWaveCountdownText.enabled = true;
+        }
+        else
+        {
+            yield return new WaitForSeconds(1f);
+        }
     }
 
-    shopUI.SetActive(false);
     nextWaveCountdownText.gameObject.SetActive(false);
+    shopUI.SetActive(false);
 }
-private void UpdateScoreUI()
-{
-    scoreText.text = $"{score}";
-}
+private void UpdateScoreUI() => scoreText.text = $"{score}";
+
 public void BuyChicken()
 {
-    if (hasPurchased || score < 500) return;
+    if (hasPurchased || score < 50) return;
 
     score -= 50;
     chicken++;
@@ -236,7 +270,7 @@ public void BuyChicken()
 
 public void BuyCactus()
 {
-    if (hasPurchased || score < 350) return;
+    if (hasPurchased || score < 35) return;
 
     score -= 35;
     cactus++;
@@ -249,7 +283,7 @@ public void BuyCactus()
 
 public void BuyMaracas()
 {
-    if (hasPurchased || score < 200) return;
+    if (hasPurchased || score < 20) return;
 
     score -= 20;
     maracas++;
@@ -308,23 +342,12 @@ public void BuyMaracas()
       multiplier = 1 + (streakCount - streakThreshold + 1);
       multiplier = Mathf.Min(multiplier, maxMultiplier);
     }
-    // Add and update score.
-    score += 1 * multiplier;
-    scoreText.text = $"{score}";
+   int addedScore = 1 * multiplier;
+      score += addedScore;
+      waveScore += addedScore;
 
-    // Increase time by a little bit.
-    timeRemaining += 1;
-    // Remove from active moles.
-    currentMoles.Remove(moles[moleIndex]);
-    // Calculate wave progress
-    int waveScore = score;
-    if (currentWave > 1)
-    {
-        for (int i = 0; i < currentWave - 1; i++)
-        {
-            waveScore -= waveScoreThresholds[i];
-        }
-    }
+      UpdateScoreUI();
+      currentMoles.Remove(moles[moleIndex]);
 
     int waveGoal = waveScoreThresholds.Count >= currentWave
         ? waveScoreThresholds[currentWave - 1]
@@ -333,7 +356,16 @@ public void BuyMaracas()
     // Update UI
    scoreProgressText.text = $"<color=green>Wave Score: {waveScore}</color> / {waveGoal}";
   }
+public int GetScore()
+{
+    return score;
+}
 
+public void SubtractScore(int amount)
+{
+    score -= amount;
+    UpdateScoreUI();
+}
   public void Missed(int moleIndex, bool isMole)
   {
     streakCount = 0;

@@ -147,9 +147,7 @@ public class Mole : MonoBehaviour
             }
           }
           break;
-        case MoleType.Bomb:
-          gameManager.GameOver(1);
-          break;
+        
       }
     }
   }

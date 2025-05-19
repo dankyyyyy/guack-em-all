@@ -1,0 +1,1001 @@
+fileFormatVersion: 2
+guid: 6d8b01cef4680a6439728a721e2de01c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1831268152265597672
+    second: evil-avocado-mashed_0
+  - first:
+      213: 8454748952833122761
+    second: evil-avocado-mashed_1
+  - first:
+      213: 8737908264790751254
+    second: evil-avocado-mashed_2
+  - first:
+      213: -2742346452853300021
+    second: evil-avocado-mashed_3
+  - first:
+      213: -8963541712443159836
+    second: evil-avocado-mashed_4
+  - first:
+      213: 801507037699304066
+    second: evil-avocado-mashed_5
+  - first:
+      213: -2139324481748416521
+    second: evil-avocado-mashed_6
+  - first:
+      213: -4197862083224945006
+    second: evil-avocado-mashed_7
+  - first:
+      213: 7852559561107426343
+    second: evil-avocado-mashed_8
+  - first:
+      213: 2836753037221103311
+    second: evil-avocado-mashed_9
+  - first:
+      213: -3681627856437838552
+    second: evil-avocado-mashed_10
+  - first:
+      213: 2123879868244708903
+    second: evil-avocado-mashed_11
+  - first:
+      213: -1001810271262752683
+    second: evil-avocado-mashed_12
+  - first:
+      213: 4768971078653918710
+    second: evil-avocado-mashed_13
+  - first:
+      213: -8537651488699904416
+    second: evil-avocado-mashed_14
+  - first:
+      213: -4724227184212180452
+    second: evil-avocado-mashed_15
+  - first:
+      213: 4960961387682762492
+    second: evil-avocado-mashed_16
+  - first:
+      213: -6881355009018124029
+    second: evil-avocado-mashed_17
+  - first:
+      213: -8206479845084667813
+    second: evil-avocado-mashed_18
+  - first:
+      213: 5236663691847585719
+    second: evil-avocado-mashed_19
+  - first:
+      213: 6353689603308042516
+    second: evil-avocado-mashed_20
+  - first:
+      213: -5471900940526680736
+    second: evil-avocado-mashed_21
+  - first:
+      213: 9103519694941183465
+    second: evil-avocado-mashed_22
+  - first:
+      213: 1535254765561788823
+    second: evil-avocado-mashed_23
+  - first:
+      213: -5270063523377711232
+    second: evil-avocado-mashed_24
+  - first:
+      213: -865826178601311611
+    second: evil-avocado-mashed_25
+  - first:
+      213: 7595125219832896638
+    second: evil-avocado-mashed_26
+  - first:
+      213: 5273407320532984095
+    second: evil-avocado-mashed_27
+  - first:
+      213: -9066809027764526131
+    second: evil-avocado-mashed_28
+  - first:
+      213: -1108154239256353833
+    second: evil-avocado-mashed_29
+  - first:
+      213: -3904741935076777542
+    second: evil-avocado-mashed_30
+  - first:
+      213: 2433215570881559137
+    second: evil-avocado-mashed_31
+  - first:
+      213: 1800567512486811879
+    second: evil-avocado-mashed_32
+  - first:
+      213: -6677652233397606623
+    second: evil-avocado-mashed_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: evil-avocado-mashed_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e2e6489ea8f96910800000000000000
+      internalID: 1831268152265597672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 58
+        width: 8
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c169be906d455570800000000000000
+      internalID: 8454748952833122761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_2
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 58
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6187dca7549434970800000000000000
+      internalID: 8737908264790751254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_3
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 58
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc460a24e6a31f9d0800000000000000
+      internalID: -2742346452853300021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_4
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 58
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eacd6cad4a1b9380800000000000000
+      internalID: -8963541712443159836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 58
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28aea0b77668f1b00800000000000000
+      internalID: 801507037699304066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_6
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 58
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f7c61ee7b79f42e0800000000000000
+      internalID: -2139324481748416521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_7
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 58
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29ebb413da23eb5c0800000000000000
+      internalID: -4197862083224945006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_8
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 58
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72cc761f055e9fc60800000000000000
+      internalID: 7852559561107426343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 6
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc6031b8bdb2e5720800000000000000
+      internalID: 2836753037221103311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_10
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 58
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82df6dd78fa38ecc0800000000000000
+      internalID: -3681627856437838552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 6
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72e4454cc79897d10800000000000000
+      internalID: 2123879868244708903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 6
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 550cb09bddad812f0800000000000000
+      internalID: -1001810271262752683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_13
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 58
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fd374fcde9ce2240800000000000000
+      internalID: 4768971078653918710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_14
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 58
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06e05f7943b248980800000000000000
+      internalID: -8537651488699904416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 6
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c120acee76c207eb0800000000000000
+      internalID: -4724227184212180452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 6
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfe82490910e8d440800000000000000
+      internalID: 4960961387682762492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_17
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 58
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 309ae1a04148080a0800000000000000
+      internalID: -6881355009018124029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_18
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 58
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5063598f0abc1e80800000000000000
+      internalID: -8206479845084667813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 6
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bfc2c8f1ed5ca840800000000000000
+      internalID: 5236663691847585719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 6
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 419b44ae707dc2850800000000000000
+      internalID: 6353689603308042516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_21
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 58
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06508c10617ef04b0800000000000000
+      internalID: -5471900940526680736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_22
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 58
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9edddb61ee2365e70800000000000000
+      internalID: 9103519694941183465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 6
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 799390d33125e4510800000000000000
+      internalID: 1535254765561788823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 5
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 087f351c529fcd6b0800000000000000
+      internalID: -5270063523377711232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_25
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 58
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5822c3b8da7fbf3f0800000000000000
+      internalID: -865826178601311611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 58
+        width: 6
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7c10c0952e476960800000000000000
+      internalID: 7595125219832896638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_27
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f112050b408ee2940800000000000000
+      internalID: 5273407320532984095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_28
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1
+        width: 1
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc36acd2a393c2280800000000000000
+      internalID: -9066809027764526131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_29
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 4
+        width: 1
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d328c4379b0f90f0800000000000000
+      internalID: -1108154239256353833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_30
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1
+        width: 1
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab16d24f5e19fc9c0800000000000000
+      internalID: -3904741935076777542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_31
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1
+        width: 1
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16a38548ba484c120800000000000000
+      internalID: 2433215570881559137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_32
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1
+        width: 1
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e892efdc96ecf810800000000000000
+      internalID: 1800567512486811879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evil-avocado-mashed_33
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1
+        width: 1
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 127edb66ca63453a0800000000000000
+      internalID: -6677652233397606623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: be0eb825f1658bf4186ea6e183aa4fa8
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      evil-avocado-mashed_0: 1831268152265597672
+      evil-avocado-mashed_1: 8454748952833122761
+      evil-avocado-mashed_10: -3681627856437838552
+      evil-avocado-mashed_11: 2123879868244708903
+      evil-avocado-mashed_12: -1001810271262752683
+      evil-avocado-mashed_13: 4768971078653918710
+      evil-avocado-mashed_14: -8537651488699904416
+      evil-avocado-mashed_15: -4724227184212180452
+      evil-avocado-mashed_16: 4960961387682762492
+      evil-avocado-mashed_17: -6881355009018124029
+      evil-avocado-mashed_18: -8206479845084667813
+      evil-avocado-mashed_19: 5236663691847585719
+      evil-avocado-mashed_2: 8737908264790751254
+      evil-avocado-mashed_20: 6353689603308042516
+      evil-avocado-mashed_21: -5471900940526680736
+      evil-avocado-mashed_22: 9103519694941183465
+      evil-avocado-mashed_23: 1535254765561788823
+      evil-avocado-mashed_24: -5270063523377711232
+      evil-avocado-mashed_25: -865826178601311611
+      evil-avocado-mashed_26: 7595125219832896638
+      evil-avocado-mashed_27: 5273407320532984095
+      evil-avocado-mashed_28: -9066809027764526131
+      evil-avocado-mashed_29: -1108154239256353833
+      evil-avocado-mashed_3: -2742346452853300021
+      evil-avocado-mashed_30: -3904741935076777542
+      evil-avocado-mashed_31: 2433215570881559137
+      evil-avocado-mashed_32: 1800567512486811879
+      evil-avocado-mashed_33: -6677652233397606623
+      evil-avocado-mashed_4: -8963541712443159836
+      evil-avocado-mashed_5: 801507037699304066
+      evil-avocado-mashed_6: -2139324481748416521
+      evil-avocado-mashed_7: -4197862083224945006
+      evil-avocado-mashed_8: 7852559561107426343
+      evil-avocado-mashed_9: 2836753037221103311
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

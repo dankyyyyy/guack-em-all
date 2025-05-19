@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         FlipSprite(moveDirection);
         
         // Send speed to Animator
-        // animator.SetFloat("Speed", moveDirection.magnitude);
+        animator.SetFloat("Speed", moveDirection.magnitude);
     }
 
     void FixedUpdate()

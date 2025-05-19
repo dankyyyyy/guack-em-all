@@ -279,7 +279,7 @@ MonoBehaviour:
   mole: {fileID: -3858962869220257544, guid: 162e6bcbef894994d8dcf4cc9cfba122, type: 3}
   moleHardHat: {fileID: -3524269294520829867, guid: 73cd637c9e550694ba261978ddb02e97, type: 3}
   moleHatBroken: {fileID: 7057605904202164194, guid: c453b01f06d9d3142b1456de98e41c2f, type: 3}
-  moleHit: {fileID: -6583822162611181108, guid: 5d16d21e1ced7814d8e583217197c011, type: 3}
+  moleHit: {fileID: 1831268152265597672, guid: 6d8b01cef4680a6439728a721e2de01c, type: 3}
   moleHatHit: {fileID: -5312203366874672313, guid: e7eb46e4cca3e1f4784511a9e278c3a8, type: 3}
   gameManager: {fileID: 0}
   attackManager: {fileID: 0}

@@ -5,8 +5,8 @@ using TMPro;
 public class Shop : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
-[SerializeField] private AudioClip purchaseSound;
-    public int Coin;
+    [SerializeField] private AudioClip purchaseSound;
+
     public int Maracas;
     public int Cactus;
     public int Chicken;
@@ -24,34 +24,39 @@ public class Shop : MonoBehaviour
     public TextMeshProUGUI BuyCactusButtonText;
     public TextMeshProUGUI BuyMaracasButtonText;
 
-    private bool hasPurchased = false; // 🆕 only allow one purchase
+    private bool hasPurchased = false;
 
-    void Start()
+    private GameManager gameManager;
+
+    void Awake()
     {
-        Coin = 2000;
-        Coin_text.text = Coin.ToString();
+        gameManager = FindObjectOfType<GameManager>();
+    }
+
+    void Update()
+    {
+        // Update the coin display every frame
+        Coin_text.text = $"{gameManager.GetScore()}";
     }
 
     public void BuyChicken()
     {
         if (hasPurchased) return;
 
-        if (Coin >= 500)
+        if (gameManager.GetScore() >= 50)
         {
-            Coin -= 500;
-            Coin_text.text = Coin.ToString();
-
+            gameManager.SubtractScore(50);
             Chicken += 1;
             Chicken_text.text = "Equipped!";
             BuyChickenButtonText.text = "Purchased!";
             BuyChickenButton.interactable = false;
             audioSource.PlayOneShot(purchaseSound);
-            DisableOtherButtons(); // 🆕
+            DisableOtherButtons();
             hasPurchased = true;
         }
         else
         {
-            print("Not enough coins!");
+            Debug.Log("Not enough coins!");
         }
     }
 
@@ -59,11 +64,9 @@ public class Shop : MonoBehaviour
     {
         if (hasPurchased) return;
 
-        if (Coin >= 350)
+        if (gameManager.GetScore() >= 35)
         {
-            Coin -= 350;
-            Coin_text.text = Coin.ToString();
-
+            gameManager.SubtractScore(35);
             Cactus += 1;
             Cactus_text.text = "Equipped!";
             BuyCactusButtonText.text = "Purchased!";
@@ -74,7 +77,7 @@ public class Shop : MonoBehaviour
         }
         else
         {
-            print("Not enough coins!");
+            Debug.Log("Not enough coins!");
         }
     }
 
@@ -82,11 +85,9 @@ public class Shop : MonoBehaviour
     {
         if (hasPurchased) return;
 
-        if (Coin >= 200)
+        if (gameManager.GetScore() >= 20)
         {
-            Coin -= 200;
-            Coin_text.text = Coin.ToString();
-
+            gameManager.SubtractScore(20);
             Maracas += 1;
             Maracas_text.text = "Equipped!";
             BuyMaracasButtonText.text = "Purchased!";
@@ -97,12 +98,11 @@ public class Shop : MonoBehaviour
         }
         else
         {
-            print("Not enough coins!");
+            Debug.Log("Not enough coins!");
         }
     }
 
-    // 🆕 Disable all unpurchased buttons
-    void DisableOtherButtons()
+    private void DisableOtherButtons()
     {
         BuyChickenButton.interactable = false;
         BuyCactusButton.interactable = false;

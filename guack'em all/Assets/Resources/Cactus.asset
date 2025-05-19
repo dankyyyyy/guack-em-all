@@ -18,5 +18,5 @@ MonoBehaviour:
   swingLength: 0.3
   attackSounds:
   - {fileID: 8300000, guid: 8e00c5f7511e7a544ae279059ec93cb6, type: 3}
-  weaponSprite: {fileID: -8049908367006388923, guid: 6a42f78125584fa4fbaa706ebf36aa26, type: 3}
+  weaponSprite: {fileID: 1980647635754597448, guid: 8a7b606f6b9631048bbb42015f484862, type: 3}
   weaponPrefab: {fileID: 5719329392520221895, guid: 04197e987ece2ff9f9c4d3066c8f3351, type: 3}

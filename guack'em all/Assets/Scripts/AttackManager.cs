@@ -35,7 +35,9 @@ public class AttackManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && currentWeapon != null && IsPlayerSwinging == false)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) 
+        && currentWeapon != null 
+        && IsPlayerSwinging == false)
         {
             StartSwing();
         }
