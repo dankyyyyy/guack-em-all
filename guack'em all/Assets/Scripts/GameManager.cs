@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using static SceneLoader;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,7 +17,7 @@ public class GameManager : MonoBehaviour
   [SerializeField] private GameObject timeHeader;
   [SerializeField] private TMPro.TextMeshProUGUI timeText;
   [SerializeField] private TMPro.TextMeshProUGUI scoreText;
-  
+
 
   [SerializeField] private TMPro.TextMeshProUGUI waveText;
   [SerializeField] private TMPro.TextMeshProUGUI nextWaveCountdownText;
@@ -24,40 +26,25 @@ public class GameManager : MonoBehaviour
   [SerializeField] private TextMeshProUGUI waveCompletedText;
 
   [Header("Shop UI")]
-[SerializeField] private GameObject shopUI;
-[SerializeField] private Button buyChickenButton;
-[SerializeField] private Button buyCactusButton;
-[SerializeField] private Button buyMaracasButton;
+  [SerializeField] private GameObject shopUI;
+  [SerializeField] private Button buyChickenButton;
+  [SerializeField] private Button buyCactusButton;
+  [SerializeField] private Button buyMaracasButton;
 
-[SerializeField] private TextMeshProUGUI chickenText;
-[SerializeField] private TextMeshProUGUI cactusText;
+  [SerializeField] private TextMeshProUGUI chickenText;
+  [SerializeField] private TextMeshProUGUI cactusText;
   [SerializeField] private TextMeshProUGUI maracasText;
 
 
-[SerializeField] private AudioSource audioSource;
+  [SerializeField] private AudioSource audioSource;
   [SerializeField] private AudioClip purchaseSound;
   [SerializeField] private Button skipButton;
-private Coroutine nextWaveCoroutine;
-
-public void SkipShop()
-{
-    if (nextWaveCoroutine != null)
-    {
-        StopCoroutine(nextWaveCoroutine);
-    }
-
-    shopUI.SetActive(false);
-    nextWaveCountdownText.gameObject.SetActive(false);
-    hasPurchased = false; // <-- MAKE SURE THIS IS HERE TOO
-    nextWaveCoroutine = StartCoroutine(WaveRoutine());
-}
-
-
+  private Coroutine nextWaveCoroutine;
 
   private bool hasPurchased = false;
-private int chicken = 0;
-private int cactus = 0;
-private int maracas = 0;
+  private int chicken = 0;
+  private int cactus = 0;
+  private int maracas = 0;
 
 
 
@@ -74,21 +61,25 @@ private int maracas = 0;
   // Multiplier variables
   private int streakCount = 0;
   private int multiplier = 1;
-  public TMP_Text multiplierText; 
+  public TMP_Text multiplierText;
   public float baseFontSize = 36f;
   // Start multiplier after 4 hits
   private const int streakThreshold = 2;
   // Optional cap on multiplier
   private const int maxMultiplier = 5;
-    private int waveScore = 0;
-
-
+  private int waveScore = 0;
 
   // Delayed start to allow for other objects to Awake -
   // TODO Remove this logic when proper Scene Management has been implemented
-  public void StartGameWithDelay()
+
+  public void ReturnToMenuAfterDelay()
   {
-    StartCoroutine(DelayedCall(0.5f, StartGame));
+    StartCoroutine(DelayedCall(2f, ReturnToMenu));
+  }
+
+  public void ReturnToMenu()
+  {
+    SceneManager.LoadSceneAsync(2);
   }
 
   private IEnumerator DelayedCall(float delaySeconds, System.Action methodToCall)
@@ -96,18 +87,30 @@ private int maracas = 0;
     yield return new WaitForSeconds(delaySeconds);
     methodToCall?.Invoke();
   }
-
+  //----------------------------------------------------------------------------
   void Start()
   {
     waveText.gameObject.SetActive(false);
     nextWaveCountdownText.gameObject.SetActive(false);
     shopUI.SetActive(false);
-    StartGameWithDelay();
+    StartGame();
   }
-  //----------------------------------------------------------------------------
+
+  public void SkipShop()
+  {
+    if (nextWaveCoroutine != null)
+    {
+      StopCoroutine(nextWaveCoroutine);
+    }
+
+    shopUI.SetActive(false);
+    nextWaveCountdownText.gameObject.SetActive(false);
+    hasPurchased = false; // <-- MAKE SURE THIS IS HERE TOO
+    nextWaveCoroutine = StartCoroutine(WaveRoutine());
+  }
 
   public void StartGame()
-{
+  {
     outOfTimeText.SetActive(false);
     //bombText.SetActive(false);
     gameUI.SetActive(true);
@@ -117,8 +120,8 @@ private int maracas = 0;
 
     for (int i = 0; i < moles.Count; i++)
     {
-        moles[i].Hide();
-        moles[i].SetIndex(i);
+      moles[i].Hide();
+      moles[i].SetIndex(i);
     }
 
     currentMoles.Clear();
@@ -126,7 +129,7 @@ private int maracas = 0;
     scoreText.text = "0";
     currentWave = 0;
     StartCoroutine(WaveRoutine());
-}
+  }
 
   private IEnumerator WaveRoutine()
   {
@@ -189,9 +192,9 @@ private int maracas = 0;
         mole.Hide();
       }
       waveCompletedText.gameObject.SetActive(true);
-waveCompletedText.text = $"Wave {currentWave} Completed!";
-yield return new WaitForSeconds(2f); // Show it for 2 seconds
-waveCompletedText.gameObject.SetActive(false);
+      waveCompletedText.text = $"Wave {currentWave} Completed!";
+      yield return new WaitForSeconds(2f); // Show it for 2 seconds
+      waveCompletedText.gameObject.SetActive(false);
 
       // Start the interval between waves
       if (currentWave < maxWaves)
@@ -216,10 +219,10 @@ waveCompletedText.gameObject.SetActive(false);
 
         shopUI.SetActive(false);
         nextWaveCountdownText.gameObject.SetActive(false);
-         waveText.gameObject.SetActive(true);
+        waveText.gameObject.SetActive(true);
         scoreProgressText.gameObject.SetActive(true);
-    timeText.gameObject.SetActive(true);
-    timeHeader.SetActive(true); 
+        timeText.gameObject.SetActive(true);
+        timeHeader.SetActive(true);
       }
     }
 
@@ -228,39 +231,39 @@ waveCompletedText.gameObject.SetActive(false);
     GameOver(0);
 
   }
-private IEnumerator NextWaveCountdown()
-{
+  private IEnumerator NextWaveCountdown()
+  {
     nextWaveCountdownText.gameObject.SetActive(true);
 
     for (int i = 10; i > 0; i--)
     {
-        nextWaveCountdownText.text = $"Next wave in: {i}";
+      nextWaveCountdownText.text = $"Next wave in: {i}";
 
-        if (i <= 5)
+      if (i <= 5)
+      {
+        // Flicker effect for last 5 seconds
+        for (int j = 0; j < 4; j++) // 4 flickers = 1 second (0.25 * 4)
         {
-            // Flicker effect for last 5 seconds
-            for (int j = 0; j < 4; j++) // 4 flickers = 1 second (0.25 * 4)
-            {
-                nextWaveCountdownText.enabled = !nextWaveCountdownText.enabled;
-                yield return new WaitForSeconds(0.25f);
-            }
+          nextWaveCountdownText.enabled = !nextWaveCountdownText.enabled;
+          yield return new WaitForSeconds(0.25f);
+        }
 
-            // Ensure it's visible after flicker
-            nextWaveCountdownText.enabled = true;
-        }
-        else
-        {
-            yield return new WaitForSeconds(1f);
-        }
+        // Ensure it's visible after flicker
+        nextWaveCountdownText.enabled = true;
+      }
+      else
+      {
+        yield return new WaitForSeconds(1f);
+      }
     }
 
     nextWaveCountdownText.gameObject.SetActive(false);
     shopUI.SetActive(false);
-}
-private void UpdateScoreUI() => scoreText.text = $"{score}";
+  }
+  private void UpdateScoreUI() => scoreText.text = $"{score}";
 
-public void BuyChicken()
-{
+  public void BuyChicken()
+  {
     if (hasPurchased || score < 50) return;
 
     score -= 50;
@@ -270,10 +273,10 @@ public void BuyChicken()
     hasPurchased = true;
     audioSource.PlayOneShot(purchaseSound);
     UpdateScoreUI();
-}
+  }
 
-public void BuyCactus()
-{
+  public void BuyCactus()
+  {
     if (hasPurchased || score < 35) return;
 
     score -= 35;
@@ -283,10 +286,10 @@ public void BuyCactus()
     hasPurchased = true;
     audioSource.PlayOneShot(purchaseSound);
     UpdateScoreUI();
-}
+  }
 
-public void BuyMaracas()
-{
+  public void BuyMaracas()
+  {
     if (hasPurchased || score < 20) return;
 
     score -= 20;
@@ -296,7 +299,7 @@ public void BuyMaracas()
     hasPurchased = true;
     audioSource.PlayOneShot(purchaseSound);
     UpdateScoreUI();
-}
+  }
 
   public void GameOver(int type)
   {
@@ -307,7 +310,7 @@ public void BuyMaracas()
     }
     else
     {
-     // bombText.SetActive(true);
+      // bombText.SetActive(true);
     }
     // Hide all moles.
     foreach (Mole mole in moles)
@@ -316,25 +319,26 @@ public void BuyMaracas()
     }
     // Stop the game and show the start UI.
     playing = false;
+    ReturnToMenuAfterDelay();
   }
 
   // Update is called once per frame
   void Update()
-{
+  {
     if (playing)
     {
-        timeText.text = $"{(int)timeRemaining / 60}:{(int)timeRemaining % 60:D2}";
-        if (currentMoles.Count <= (score / 10))
+      timeText.text = $"{(int)timeRemaining / 60}:{(int)timeRemaining % 60:D2}";
+      if (currentMoles.Count <= (score / 10))
+      {
+        int index = Random.Range(0, moles.Count);
+        if (!currentMoles.Contains(moles[index]))
         {
-            int index = Random.Range(0, moles.Count);
-            if (!currentMoles.Contains(moles[index]))
-            {
-                currentMoles.Add(moles[index]);
-                moles[index].Activate(score / 10);
-            }
+          currentMoles.Add(moles[index]);
+          moles[index].Activate(score / 10);
         }
+      }
     }
-}
+  }
 
 
   public void AddScore(int moleIndex)
@@ -360,24 +364,24 @@ public void BuyMaracas()
     // Update UI
     scoreProgressText.text = $"<color=green>Wave Score: {waveScore}</color> / {waveGoal}";
     if (multiplier >= 2)
-{
-    multiplierText.gameObject.SetActive(true);
-    multiplierText.text = $"x{multiplier}";
+    {
+      multiplierText.gameObject.SetActive(true);
+      multiplierText.text = $"x{multiplier}";
 
-    float scale = Mathf.Lerp(1f, 5f, (float)(multiplier - 1) / (maxMultiplier - 1));
-    multiplierText.fontSize = baseFontSize * scale;
+      float scale = Mathf.Lerp(1f, 5f, (float)(multiplier - 1) / (maxMultiplier - 1));
+      multiplierText.fontSize = baseFontSize * scale;
 
-    multiplierText.color = Color.Lerp(Color.white, Color.red, (float)multiplier / maxMultiplier);
-}
-else
-{
-    multiplierText.gameObject.SetActive(false);
-}
+      multiplierText.color = Color.Lerp(Color.white, Color.red, (float)multiplier / maxMultiplier);
+    }
+    else
+    {
+      multiplierText.gameObject.SetActive(false);
+    }
   }
-public int GetScore()
-{
+  public int GetScore()
+  {
     return score;
-}
+  }
 
   public void SubtractScore(int amount)
   {

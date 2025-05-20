@@ -4385,7 +4385,6 @@ MonoBehaviour:
   - {fileID: 1860708195}
   gameUI: {fileID: 1956542479}
   outOfTimeText: {fileID: 412379442}
-  bombText: {fileID: 1503894620}
   timeHeader: {fileID: 929554933}
   timeText: {fileID: 1253899259}
   scoreText: {fileID: 1753272997}
