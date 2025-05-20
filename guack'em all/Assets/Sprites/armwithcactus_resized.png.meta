@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      armwithcactus_resized_0: 1980647635754597448
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

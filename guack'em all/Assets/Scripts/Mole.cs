@@ -18,8 +18,8 @@ public class Mole : MonoBehaviour
   private Vector2 startPosition = new Vector2(0f, -2.56f);
   private Vector2 endPosition = Vector2.zero;
   // How long it takes to show a mole.
-  private float showDuration = 0.5f;
-  private float duration = 1f;
+  private float showDuration = 0.75f;
+  private float duration = 1.25f;
 
   private SpriteRenderer spriteRenderer;
   private Animator animator;
@@ -31,10 +31,10 @@ public class Mole : MonoBehaviour
 
   // Mole Parameters 
   private bool hittable = true;
-  public enum MoleType { Standard, HardHat, Bomb };
+  //public enum MoleType { Standard, HardHat, Bomb };
+  public enum MoleType { Standard, HardHat };
   private MoleType moleType;
   private float hardRate = 0.25f;
-  private float bombRate = 0f;
   private int moleHealth;
   private int moleIndex = 0;
 
@@ -84,7 +84,8 @@ public class Mole : MonoBehaviour
     {
       hittable = false;
       // We only give time penalty if it isn't a bomb.
-      gameManager.Missed(moleIndex, moleType != MoleType.Bomb);
+      // gameManager.Missed(moleIndex, moleType = MoleType.Bomb);
+      gameManager.Missed(moleIndex);
     }
   }
 
@@ -98,7 +99,7 @@ public class Mole : MonoBehaviour
 
   private IEnumerator QuickHide()
   {
-    yield return new WaitForSeconds(0.25f);
+    yield return new WaitForSeconds(1f);
     // Whilst we were waiting we may have spawned again here, so just
     // check that hasn't happened before hiding it. This will stop it
     // flickering in that case.
@@ -135,7 +136,7 @@ public class Mole : MonoBehaviour
               gameManager.AddScore(moleIndex);
               StopAllCoroutines();
               StartCoroutine(QuickHide());
-              hittable = false;
+              hittable = false; 
             }
             else if (moleHealth > 0)
             {
@@ -156,17 +157,17 @@ public class Mole : MonoBehaviour
   private void CreateNext()
   {
     float random = Random.Range(0f, 1f);
-    if (random < bombRate)
-    {
-      // Make a bomb.
-      moleType = MoleType.Bomb;
-      // The animator handles setting the sprite.
-      animator.enabled = true;
-    }
-    else
-    {
+    // if (random < bombRate)
+    // {
+    //   // Make a bomb.
+    //   moleType = MoleType.Bomb;
+    //   // The animator handles setting the sprite.
+    //   animator.enabled = true;
+    // }
+    // else
+    // {
       animator.enabled = false;
-      random = Random.Range(0f, 1f);
+      // random = Random.Range(0f, 1f);
       if (random < hardRate)
       {
         // Create a hard one.
@@ -181,7 +182,7 @@ public class Mole : MonoBehaviour
         spriteRenderer.sprite = mole;
         moleHealth = 5;
       }
-    }
+    // }
     // Mark as hittable so we can register an onclick event.
     hittable = true;
   }
@@ -190,7 +191,7 @@ public class Mole : MonoBehaviour
   private void SetLevel(int level)
   {
     // As level increases increse the bomb rate to 0.25 at level 10.
-    bombRate = Mathf.Min(level * 0.025f, 0.25f);
+    // bombRate = Mathf.Min(level * 0.025f, 0.25f);
 
     // Increase the amounts of HardHats until 100% at level 40.
     hardRate = Mathf.Min(level * 0.025f, 1f);
