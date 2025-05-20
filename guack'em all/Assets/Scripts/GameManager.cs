@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
   [Header("UI objects")]
   [SerializeField] private GameObject gameUI;
   [SerializeField] private GameObject outOfTimeText;
-  [SerializeField] private GameObject bombText;
+  //[SerializeField] private GameObject bombText;
   [SerializeField] private GameObject timeHeader;
   [SerializeField] private TMPro.TextMeshProUGUI timeText;
   [SerializeField] private TMPro.TextMeshProUGUI scoreText;
@@ -105,7 +105,7 @@ private int maracas = 0;
   public void StartGame()
 {
     outOfTimeText.SetActive(false);
-    bombText.SetActive(false);
+    //bombText.SetActive(false);
     gameUI.SetActive(true);
     scoreText.gameObject.SetActive(false);
     waveText.gameObject.SetActive(true);
@@ -303,7 +303,7 @@ public void BuyMaracas()
     }
     else
     {
-      bombText.SetActive(true);
+     // bombText.SetActive(true);
     }
     // Hide all moles.
     foreach (Mole mole in moles)
@@ -361,12 +361,13 @@ public int GetScore()
     return score;
 }
 
-public void SubtractScore(int amount)
-{
+  public void SubtractScore(int amount)
+  {
     score -= amount;
     UpdateScoreUI();
-}
-  public void Missed(int moleIndex, bool isMole)
+  }
+  //public void Missed(int moleIndex, bool isMole)
+  public void Missed(int moleIndex)
   {
     streakCount = 0;
     multiplier = 1;
