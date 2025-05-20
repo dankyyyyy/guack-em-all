@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
   [SerializeField] private GameObject timeHeader;
   [SerializeField] private TMPro.TextMeshProUGUI timeText;
   [SerializeField] private TMPro.TextMeshProUGUI scoreText;
+  
 
   [SerializeField] private TMPro.TextMeshProUGUI waveText;
   [SerializeField] private TMPro.TextMeshProUGUI nextWaveCountdownText;
@@ -30,7 +31,8 @@ public class GameManager : MonoBehaviour
 
 [SerializeField] private TextMeshProUGUI chickenText;
 [SerializeField] private TextMeshProUGUI cactusText;
-[SerializeField] private TextMeshProUGUI maracasText;
+  [SerializeField] private TextMeshProUGUI maracasText;
+
 
 [SerializeField] private AudioSource audioSource;
   [SerializeField] private AudioClip purchaseSound;
@@ -72,6 +74,8 @@ private int maracas = 0;
   // Multiplier variables
   private int streakCount = 0;
   private int multiplier = 1;
+  public TMP_Text multiplierText; 
+  public float baseFontSize = 36f;
   // Start multiplier after 4 hits
   private const int streakThreshold = 2;
   // Optional cap on multiplier
@@ -342,19 +346,33 @@ public void BuyMaracas()
       multiplier = 1 + (streakCount - streakThreshold + 1);
       multiplier = Mathf.Min(multiplier, maxMultiplier);
     }
-   int addedScore = 1 * multiplier;
-      score += addedScore;
-      waveScore += addedScore;
+    int addedScore = 1 * multiplier;
+    score += addedScore;
+    waveScore += addedScore;
 
-      UpdateScoreUI();
-      currentMoles.Remove(moles[moleIndex]);
+    UpdateScoreUI();
+    currentMoles.Remove(moles[moleIndex]);
 
     int waveGoal = waveScoreThresholds.Count >= currentWave
         ? waveScoreThresholds[currentWave - 1]
         : waveScoreThresholds[waveScoreThresholds.Count - 1];
 
     // Update UI
-   scoreProgressText.text = $"<color=green>Wave Score: {waveScore}</color> / {waveGoal}";
+    scoreProgressText.text = $"<color=green>Wave Score: {waveScore}</color> / {waveGoal}";
+    if (multiplier >= 2)
+{
+    multiplierText.gameObject.SetActive(true);
+    multiplierText.text = $"x{multiplier}";
+
+    float scale = Mathf.Lerp(1f, 5f, (float)(multiplier - 1) / (maxMultiplier - 1));
+    multiplierText.fontSize = baseFontSize * scale;
+
+    multiplierText.color = Color.Lerp(Color.white, Color.red, (float)multiplier / maxMultiplier);
+}
+else
+{
+    multiplierText.gameObject.SetActive(false);
+}
   }
 public int GetScore()
 {
