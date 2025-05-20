@@ -12,6 +12,7 @@ public class AttackManager : MonoBehaviour
     //[SerializeField] private TrailRenderer weaponTrail;
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
     public int damagedHealth;
+    private string Hammer;
     private string Cactus;
     private string Maracas;
     private string Chicken;
@@ -35,8 +36,8 @@ public class AttackManager : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) 
-        && currentWeapon != null 
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        && currentWeapon != null
         && IsPlayerSwinging == false)
         {
             StartSwing();
@@ -44,7 +45,7 @@ public class AttackManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            WeaponSO loadedWeapon = Resources.Load<WeaponSO>("Cactus");
+            WeaponSO loadedWeapon = Resources.Load<WeaponSO>("Hammer");
             if (loadedWeapon != null)
             {
                 EquipWeapon(loadedWeapon);
@@ -52,13 +53,13 @@ public class AttackManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Could not load weapon: " + Cactus + ". Make sure it's in a 'Resources' folder.");
+                Debug.LogError("Could not load weapon: " + Hammer + ". Make sure it's in a 'Resources' folder.");
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            WeaponSO loadedWeapon = Resources.Load<WeaponSO>("Maracas");
+            WeaponSO loadedWeapon = Resources.Load<WeaponSO>("Cactus");
             if (loadedWeapon != null)
             {
                 EquipWeapon(loadedWeapon);
@@ -66,17 +67,30 @@ public class AttackManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Could not load weapon: " + Maracas + ". Make sure it's in a 'Resources' folder.");
+                Debug.LogError("Could not load weapon: " + Cactus + ". Make sure it's in a 'Resources' folder.");
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            WeaponSO loadedWeapon = Resources.Load<WeaponSO>("Chicken");
+            WeaponSO loadedWeapon = Resources.Load<WeaponSO>("Maracas");
             if (loadedWeapon != null)
             {
                 EquipWeapon(loadedWeapon);
                 Debug.Log("Equipped Weapon 3: " + loadedWeapon.name);
+            }
+            else
+            {
+                Debug.LogError("Could not load weapon: " + Maracas + ". Make sure it's in a 'Resources' folder.");
+            }
+        }
+         if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            WeaponSO loadedWeapon = Resources.Load<WeaponSO>("Chicken");
+            if (loadedWeapon != null)
+            {
+                EquipWeapon(loadedWeapon);
+                Debug.Log("Equipped Weapon 4: " + loadedWeapon.name);
             }
             else
             {
