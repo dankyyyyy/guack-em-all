@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
 
   [SerializeField] private AudioSource audioSource;
   [SerializeField] private AudioClip purchaseSound;
+  [SerializeField] private AudioClip backgroundMusic;
   [SerializeField] private Button skipButton;
   private Coroutine nextWaveCoroutine;
 
@@ -93,6 +94,19 @@ public class GameManager : MonoBehaviour
     nextWaveCountdownText.gameObject.SetActive(false);
     shopUI.SetActive(false);
     StartGame();
+    PlayBackgroundMusic();
+  }
+
+  private void PlayBackgroundMusic()
+  {
+    if (backgroundMusic != null)
+    {
+      {
+        audioSource.volume = 0.5f;
+        AudioClip clip = backgroundMusic;
+        audioSource.PlayOneShot(clip);
+      }
+    }
   }
 
   public void SkipShop()

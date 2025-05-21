@@ -38,6 +38,10 @@ public class Mole : MonoBehaviour
   private int moleHealth;
   private int moleIndex = 0;
 
+  // Mole hit sound
+  [SerializeField] private AudioClip moleHitSound;
+  [SerializeField] private AudioSource moleAudioSource;
+
   private IEnumerator ShowHide(Vector2 start, Vector2 end)
   {
     // Make sure we start at the start.
@@ -109,6 +113,16 @@ public class Mole : MonoBehaviour
     }
   }
 
+  private void PlayHitSound()
+  {
+    if (moleHitSound != null) {
+        {
+            AudioClip clip = moleHitSound;
+            moleAudioSource.PlayOneShot(clip);
+        }
+    }
+  }
+
   private void OnTriggerEnter2D(Collider2D collision)
   {
     if (!hittable) return;
@@ -121,6 +135,7 @@ public class Mole : MonoBehaviour
           spriteRenderer.sprite = moleHit;
           gameManager.AddScore(moleIndex);
           StopAllCoroutines();
+          PlayHitSound();
           StartCoroutine(QuickHide());
           hittable = false;
           break;
@@ -135,8 +150,9 @@ public class Mole : MonoBehaviour
               spriteRenderer.sprite = moleHit;
               gameManager.AddScore(moleIndex);
               StopAllCoroutines();
+              PlayHitSound();
               StartCoroutine(QuickHide());
-              hittable = false; 
+              hittable = false;
             }
             else if (moleHealth > 0)
             {
@@ -148,7 +164,7 @@ public class Mole : MonoBehaviour
             }
           }
           break;
-        
+
       }
     }
   }

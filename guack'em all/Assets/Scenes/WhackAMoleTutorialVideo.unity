@@ -566,6 +566,14 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1490925527}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleAudioSource
+      value: 
+      objectReference: {fileID: 745544874}
     - target: {fileID: 6622357226697071798, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.02
@@ -1587,6 +1595,14 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1490925527}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleAudioSource
+      value: 
+      objectReference: {fileID: 745544874}
     - target: {fileID: 6622357226697071798, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
@@ -1913,6 +1929,14 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1490925527}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleAudioSource
+      value: 
+      objectReference: {fileID: 745544874}
     - target: {fileID: 6622357226697071798, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.97
@@ -3814,6 +3838,14 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1490925527}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleAudioSource
+      value: 
+      objectReference: {fileID: 745544874}
     - target: {fileID: 6622357226697071798, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.97
@@ -4402,6 +4434,7 @@ MonoBehaviour:
   maracasText: {fileID: 1875574934}
   audioSource: {fileID: 1490925529}
   purchaseSound: {fileID: 8300000, guid: 1d8c22ef02f34bb4080a9a1135130129, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: c895fd1adf711e2d289f60fa8e835b3c, type: 3}
   skipButton: {fileID: 2087791386}
   startingTime: 30
   multiplierText: {fileID: 364761799}
@@ -5240,6 +5273,14 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1490925527}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleAudioSource
+      value: 
+      objectReference: {fileID: 745544874}
     - target: {fileID: 6622357226697071798, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.02
@@ -5711,6 +5752,14 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1490925527}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleAudioSource
+      value: 
+      objectReference: {fileID: 745544874}
     - target: {fileID: 6622357226697071798, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.01
@@ -6017,6 +6066,14 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1490925527}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleAudioSource
+      value: 
+      objectReference: {fileID: 745544874}
     - target: {fileID: 6622357226697071798, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01
@@ -6575,6 +6632,14 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1490925527}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleAudioSource
+      value: 
+      objectReference: {fileID: 745544874}
     - target: {fileID: 6622357226697071798, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.02
@@ -6860,6 +6925,14 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1490925527}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleAudioSource
+      value: 
+      objectReference: {fileID: 745544874}
     - target: {fileID: 6622357226697071798, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

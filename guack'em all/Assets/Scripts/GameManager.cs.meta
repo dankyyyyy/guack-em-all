@@ -1,2 +1,32 @@
 fileFormatVersion: 2
 guid: b3f097249ea92d645b46f025a1f45926
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - gameUI: {instanceID: 0}
+  - outOfTimeText: {instanceID: 0}
+  - timeHeader: {instanceID: 0}
+  - timeText: {instanceID: 0}
+  - scoreText: {instanceID: 0}
+  - waveText: {instanceID: 0}
+  - nextWaveCountdownText: {instanceID: 0}
+  - scoreProgressText: {instanceID: 0}
+  - waveCompletedText: {instanceID: 0}
+  - shopUI: {instanceID: 0}
+  - buyChickenButton: {instanceID: 0}
+  - buyCactusButton: {instanceID: 0}
+  - buyMaracasButton: {instanceID: 0}
+  - chickenText: {instanceID: 0}
+  - cactusText: {instanceID: 0}
+  - maracasText: {instanceID: 0}
+  - audioSource: {instanceID: 0}
+  - purchaseSound: {instanceID: 0}
+  - backgroundMusic: {fileID: 8300000, guid: c895fd1adf711e2d289f60fa8e835b3c, type: 3}
+  - skipButton: {instanceID: 0}
+  - multiplierText: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
