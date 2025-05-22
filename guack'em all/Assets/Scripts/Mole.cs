@@ -39,10 +39,11 @@ public class Mole : MonoBehaviour
   private int moleHealth;
   private int moleIndex = 0;
   [SerializeField] private AudioClip bombHitSound;
+  [SerializeField] private AudioClip bombPainSounds;
   [SerializeField] private AudioSource moleAudioSource;
 
   public AnimationCurve curve;
-  public float shakeDuration = 1f;
+  public float shakeDuration = 0.5f;
   public Transform cameraTransform;
 
   private IEnumerator ShowHide(Vector2 start, Vector2 end)
@@ -241,10 +242,13 @@ public class Mole : MonoBehaviour
   {
     StartCameraShaking();
 
-    if (bombHitSound != null)
+    if (bombHitSound != null && bombPainSounds != null)
     {
-      AudioClip clip = bombHitSound;
-      moleAudioSource.PlayOneShot(clip);
+      AudioClip bombHit = bombHitSound;
+      moleAudioSource.PlayOneShot(bombHit);
+
+      AudioClip bombCries = bombPainSounds;
+      moleAudioSource.PlayOneShot(bombCries);
     }
   }
 
