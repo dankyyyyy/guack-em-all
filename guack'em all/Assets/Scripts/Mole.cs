@@ -48,7 +48,6 @@ public class Mole : MonoBehaviour
 
   // Mole hit sound
   [SerializeField] private AudioClip moleHitSound;
-  [SerializeField] private AudioSource moleAudioSource;
 
   private IEnumerator ShowHide(Vector2 start, Vector2 end)
   {

@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -407,8 +407,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 572a99c2bd6dcd04fa8e60e21b276333, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   audioSource: {fileID: 57370096}
   purchaseSound: {fileID: 8300000, guid: 1d8c22ef02f34bb4080a9a1135130129, type: 3}
   Maracas: 0
@@ -541,8 +541,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d81fbb13b8e52804fbc2c7ab60407e0b, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &188958288
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,8 +591,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
     m_WrapAround: 0
@@ -634,7 +634,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument:
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
@@ -646,7 +646,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument:
+          m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &188958291
@@ -659,8 +659,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -696,8 +696,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d81fbb13b8e52804fbc2c7ab60407e0b, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &202688484
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,26 +795,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: gameManager
-      value:
+      value: 
       objectReference: {fileID: 1490925527}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombHitSound
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: dbec1ed77221eb438867e2491f1ba0b2, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombPainSounds
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: 2ef5a10bf05ce2d469115746be46dc56, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: cameraTransform
-      value:
+      value: 
       objectReference: {fileID: 1745938217}
-      propertyPath: moleHitSound
-      value:
-      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: moleAudioSource
-      value:
+      value: 
       objectReference: {fileID: 745544874}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: curve.m_Curve.Array.size
@@ -934,8 +935,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
     m_WrapAround: 0
@@ -978,8 +979,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -1053,8 +1054,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -1170,8 +1171,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -1180,7 +1181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text:
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f49ec3758bad79479af8f9f04ca8483, type: 2}
   m_sharedMaterial: {fileID: -3862185148638133674, guid: 4f49ec3758bad79479af8f9f04ca8483, type: 2}
@@ -1287,8 +1288,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d81fbb13b8e52804fbc2c7ab60407e0b, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &412379442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,8 +1337,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -1473,8 +1474,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -1678,8 +1679,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
@@ -1695,8 +1696,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
@@ -1943,26 +1944,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: gameManager
-      value:
+      value: 
       objectReference: {fileID: 1490925527}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombHitSound
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: dbec1ed77221eb438867e2491f1ba0b2, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombPainSounds
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: 7de005fc147dc264e892b3f5bcd4af9a, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: cameraTransform
-      value:
+      value: 
       objectReference: {fileID: 1745938217}
-      propertyPath: moleHitSound
-      value:
-      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: moleAudioSource
-      value:
+      value: 
       objectReference: {fileID: 745544874}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: curve.m_Curve.Array.size
@@ -2152,8 +2154,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 660ec54c80a7d6681ab59472038022af, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   currentWeapon: {fileID: 11400000, guid: 045e6279c58a16247af9acc52c86cbb1, type: 2}
   weaponTransform: {fileID: 745544876}
   weaponAnimator: {fileID: 745544875}
@@ -2209,8 +2211,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -2308,23 +2310,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: gameManager
-      value:
+      value: 
       objectReference: {fileID: 1490925527}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombHitSound
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: dbec1ed77221eb438867e2491f1ba0b2, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombPainSounds
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: 2ef5a10bf05ce2d469115746be46dc56, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: cameraTransform
-      value:
+      value: 
       objectReference: {fileID: 1745938217}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: moleAudioSource
-      value:
+      value: 
       objectReference: {fileID: 745544874}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: curve.m_Curve.Array.size
@@ -2423,8 +2429,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 581e2185d59447d46963d74d34326b5c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   movespeed: 0
 --- !u!50 &954698043
 Rigidbody2D:
@@ -2516,8 +2522,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -2741,8 +2747,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
     m_WrapAround: 0
@@ -2784,7 +2790,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument:
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1011174351
@@ -2797,8 +2803,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -2843,11 +2849,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3578528389201330895, guid: e009c0ca42e97e3499a006e22e9644a8, type: 3}
       propertyPath: m_Sprite
-      value:
+      value: 
       objectReference: {fileID: -397581940798289313, guid: 88a14511ac6cebd47bc95b5180f11211, type: 3}
     - target: {fileID: 3699600436532927582, guid: e009c0ca42e97e3499a006e22e9644a8, type: 3}
       propertyPath: m_Controller
-      value:
+      value: 
       objectReference: {fileID: 9100000, guid: ebd41c273f81dc94d9061fe2e01050a2, type: 2}
     - target: {fileID: 4371807819122236171, guid: e009c0ca42e97e3499a006e22e9644a8, type: 3}
       propertyPath: m_Enabled
@@ -2855,11 +2861,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4371807819122236171, guid: e009c0ca42e97e3499a006e22e9644a8, type: 3}
       propertyPath: currentWeapon
-      value:
+      value: 
       objectReference: {fileID: 11400000, guid: 6875afbddde488343b303235d1453e31, type: 2}
     - target: {fileID: 4371807819122236171, guid: e009c0ca42e97e3499a006e22e9644a8, type: 3}
       propertyPath: weaponSpriteRenderer
-      value:
+      value: 
       objectReference: {fileID: 745544870}
     - target: {fileID: 7506442478129081061, guid: e009c0ca42e97e3499a006e22e9644a8, type: 3}
       propertyPath: m_Name
@@ -2966,8 +2972,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -3102,8 +3108,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -3200,8 +3206,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d81fbb13b8e52804fbc2c7ab60407e0b, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1159333420
 GameObject:
   m_ObjectHideFlags: 0
@@ -3249,8 +3255,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -3396,8 +3402,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
   m_BlockingObjects: 0
   m_BlockingMask:
@@ -3413,8 +3419,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
@@ -3458,8 +3464,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d81fbb13b8e52804fbc2c7ab60407e0b, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1204318707
 GameObject:
   m_ObjectHideFlags: 0
@@ -3509,8 +3515,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
     m_WrapAround: 0
@@ -3552,7 +3558,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument:
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1204318710
@@ -3565,8 +3571,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -3640,8 +3646,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -3776,8 +3782,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -3874,8 +3880,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d81fbb13b8e52804fbc2c7ab60407e0b, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1289151678
 GameObject:
   m_ObjectHideFlags: 0
@@ -4010,8 +4016,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -4109,26 +4115,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: gameManager
-      value:
+      value: 
       objectReference: {fileID: 1490925527}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombHitSound
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: dbec1ed77221eb438867e2491f1ba0b2, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombPainSounds
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: 2ef5a10bf05ce2d469115746be46dc56, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: cameraTransform
-      value:
+      value: 
       objectReference: {fileID: 1745938217}
-      propertyPath: moleHitSound
-      value:
-      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: moleAudioSource
-      value:
+      value: 
       objectReference: {fileID: 745544874}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: curve.m_Curve.Array.size
@@ -4337,8 +4344,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -4595,8 +4602,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
     m_WrapAround: 0
@@ -4638,7 +4645,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument:
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1442950367
@@ -4651,8 +4658,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -4794,8 +4801,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3f097249ea92d645b46f025a1f45926, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   moles:
   - {fileID: 110404560}
   - {fileID: 1123297557}
@@ -4809,7 +4816,6 @@ MonoBehaviour:
   gameUI: {fileID: 1956542479}
   outOfTimeText: {fileID: 412379442}
   timeText: {fileID: 1253899259}
-  scoreText: {fileID: 0}
   waveText: {fileID: 48035741}
   nextWaveCountdownText: {fileID: 1159333422}
   waveScoreThresholds: 0a000000140000001e000000
@@ -5077,8 +5083,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -5213,8 +5219,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -5288,8 +5294,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -5405,8 +5411,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
@@ -5436,8 +5442,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
@@ -5503,8 +5509,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -5639,8 +5645,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -5738,26 +5744,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: gameManager
-      value:
+      value: 
       objectReference: {fileID: 1490925527}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombHitSound
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: dbec1ed77221eb438867e2491f1ba0b2, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombPainSounds
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: 2ef5a10bf05ce2d469115746be46dc56, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: cameraTransform
-      value:
+      value: 
       objectReference: {fileID: 1745938217}
-      propertyPath: moleHitSound
-      value:
-      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: moleAudioSource
-      value:
+      value: 
       objectReference: {fileID: 745544874}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: curve.m_Curve.Array.size
@@ -5908,8 +5915,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -6100,8 +6107,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
@@ -6181,8 +6188,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -6280,26 +6287,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: gameManager
-      value:
+      value: 
       objectReference: {fileID: 1490925527}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombHitSound
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: dbec1ed77221eb438867e2491f1ba0b2, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombPainSounds
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: bdf0d0d46e184c34fa0fd514ee9d9848, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: cameraTransform
-      value:
+      value: 
       objectReference: {fileID: 1745938217}
-      propertyPath: moleHitSound
-      value:
-      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: moleAudioSource
-      value:
+      value: 
       objectReference: {fileID: 745544874}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: curve.m_Curve.Array.size
@@ -6466,8 +6474,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d81fbb13b8e52804fbc2c7ab60407e0b, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1860708195 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
@@ -6477,8 +6485,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d81fbb13b8e52804fbc2c7ab60407e0b, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1867242448
 GameObject:
   m_ObjectHideFlags: 0
@@ -6526,8 +6534,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -6625,26 +6633,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: gameManager
-      value:
+      value: 
       objectReference: {fileID: 1490925527}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombHitSound
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: dbec1ed77221eb438867e2491f1ba0b2, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombPainSounds
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: bdf0d0d46e184c34fa0fd514ee9d9848, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: cameraTransform
-      value:
+      value: 
       objectReference: {fileID: 1745938217}
-      propertyPath: moleHitSound
-      value:
-      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: moleAudioSource
-      value:
+      value: 
       objectReference: {fileID: 745544874}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: curve.m_Curve.Array.size
@@ -6763,8 +6772,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -6986,8 +6995,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -7122,8 +7131,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d81fbb13b8e52804fbc2c7ab60407e0b, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2052353133
 GameObject:
   m_ObjectHideFlags: 0
@@ -7258,26 +7267,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: gameManager
-      value:
+      value: 
       objectReference: {fileID: 1490925527}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombHitSound
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: dbec1ed77221eb438867e2491f1ba0b2, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombPainSounds
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: 7de005fc147dc264e892b3f5bcd4af9a, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: cameraTransform
-      value:
+      value: 
       objectReference: {fileID: 1745938217}
-      propertyPath: moleHitSound
-      value:
-      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: moleAudioSource
-      value:
+      value: 
       objectReference: {fileID: 745544874}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: curve.m_Curve.Array.size
@@ -7484,8 +7494,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
     m_WrapAround: 0
@@ -7519,15 +7529,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 57370094}
-        m_TargetAssemblyTypeName:
-        m_MethodName:
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName:
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument:
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2087791387
@@ -7540,8 +7550,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
@@ -7582,26 +7592,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: gameManager
-      value:
+      value: 
       objectReference: {fileID: 1490925527}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombHitSound
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: dbec1ed77221eb438867e2491f1ba0b2, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
+      propertyPath: moleHitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+    - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: bombPainSounds
-      value:
+      value: 
       objectReference: {fileID: 8300000, guid: 7de005fc147dc264e892b3f5bcd4af9a, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: cameraTransform
-      value:
+      value: 
       objectReference: {fileID: 1745938217}
-      propertyPath: moleHitSound
-      value:
-      objectReference: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: moleAudioSource
-      value:
+      value: 
       objectReference: {fileID: 745544874}
     - target: {fileID: 2726602967492469768, guid: de26f142066ba894c9a2d214028323a3, type: 3}
       propertyPath: curve.m_Curve.Array.size
