@@ -29,7 +29,7 @@ public class Mole : MonoBehaviour
   private Vector2 boxOffsetHidden;
   private Vector2 boxSizeHidden;
 
-  // Mole Parameters 
+  // Mole Parameters
   private bool hittable = true;
   public enum MoleType { Standard, HardHat, Bomb };
   // public enum MoleType { Standard, HardHat };
@@ -45,6 +45,10 @@ public class Mole : MonoBehaviour
   public AnimationCurve curve;
   public float shakeDuration = 0.5f;
   public Transform cameraTransform;
+
+  // Mole hit sound
+  [SerializeField] private AudioClip moleHitSound;
+  [SerializeField] private AudioSource moleAudioSource;
 
   private IEnumerator ShowHide(Vector2 start, Vector2 end)
   {
@@ -117,6 +121,16 @@ public class Mole : MonoBehaviour
     }
   }
 
+  private void PlayHitSound()
+  {
+    if (moleHitSound != null) {
+        {
+            AudioClip clip = moleHitSound;
+            moleAudioSource.PlayOneShot(clip);
+        }
+    }
+  }
+
   private void OnTriggerEnter2D(Collider2D collision)
   {
     if (!hittable) return;
@@ -129,6 +143,7 @@ public class Mole : MonoBehaviour
           spriteRenderer.sprite = moleHit;
           gameManager.AddScore(moleIndex);
           StopAllCoroutines();
+          PlayHitSound();
           StartCoroutine(QuickHide());
           hittable = false;
           break;
@@ -143,6 +158,7 @@ public class Mole : MonoBehaviour
               spriteRenderer.sprite = moleHit;
               gameManager.AddScore(moleIndex);
               StopAllCoroutines();
+              PlayHitSound();
               StartCoroutine(QuickHide());
               hittable = false;
             }
@@ -296,7 +312,7 @@ public class Mole : MonoBehaviour
     }
   }
 
-  // Used by the game manager to uniquely identify moles. 
+  // Used by the game manager to uniquely identify moles.
   public void SetIndex(int index)
   {
     moleIndex = index;

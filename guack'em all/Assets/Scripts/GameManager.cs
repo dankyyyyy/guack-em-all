@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
   [SerializeField] private GameObject gameUI;
   [SerializeField] private GameObject outOfTimeText;
   //[SerializeField] private GameObject bombText;
-  [SerializeField] private GameObject timeHeader;
   [SerializeField] private TMPro.TextMeshProUGUI timeText;
 
 
@@ -23,6 +22,11 @@ public class GameManager : MonoBehaviour
   [SerializeField] private List<int> waveScoreThresholds = new List<int> { 10, 20, 30 };
   [SerializeField] private TMPro.TextMeshProUGUI scoreProgressText;
   [SerializeField] private TextMeshProUGUI waveCompletedText;
+
+
+  [SerializeField] private GameObject waveTreshold;
+  [SerializeField] private GameObject timeBackground;
+
 
   [Header("Shop UI")]
   [SerializeField] private GameObject shopUI;
@@ -37,6 +41,7 @@ public class GameManager : MonoBehaviour
 
   [SerializeField] private AudioSource audioSource;
   [SerializeField] private AudioClip purchaseSound;
+  [SerializeField] private AudioClip backgroundMusic;
   [SerializeField] private Button skipButton;
   private Coroutine nextWaveCoroutine;
 
@@ -93,6 +98,19 @@ public class GameManager : MonoBehaviour
     nextWaveCountdownText.gameObject.SetActive(false);
     shopUI.SetActive(false);
     StartGame();
+    PlayBackgroundMusic();
+  }
+
+  private void PlayBackgroundMusic()
+  {
+    if (backgroundMusic != null)
+    {
+      {
+        audioSource.volume = 0.5f;
+        AudioClip clip = backgroundMusic;
+        audioSource.PlayOneShot(clip);
+      }
+    }
   }
 
   public void SkipShop()
@@ -140,7 +158,7 @@ public class GameManager : MonoBehaviour
           ? waveScoreThresholds[currentWave]
           : waveScoreThresholds[waveScoreThresholds.Count - 1];
 
-      scoreProgressText.text = $"Wave Score: 0 / {waveGoal}";
+      scoreProgressText.text = $" 0 / {waveGoal}";
 
       // Increment wave after setting the UI
       currentWave++;
@@ -203,7 +221,9 @@ public class GameManager : MonoBehaviour
         waveText.gameObject.SetActive(false);
         timeText.gameObject.SetActive(false);
         scoreProgressText.gameObject.SetActive(false);
-        timeHeader.SetActive(false);
+        timeBackground.gameObject.SetActive(false);
+        waveTreshold.gameObject.SetActive(false);
+        multiplierText.gameObject.SetActive(false);
         // Show the shop UI
         shopUI.SetActive(true);
         hasPurchased = false;
@@ -222,7 +242,8 @@ public class GameManager : MonoBehaviour
         waveText.gameObject.SetActive(true);
         scoreProgressText.gameObject.SetActive(true);
         timeText.gameObject.SetActive(true);
-        timeHeader.SetActive(true);
+        timeBackground.gameObject.SetActive(true);
+        waveTreshold.gameObject.SetActive(true);
       }
     }
 
@@ -362,7 +383,7 @@ public class GameManager : MonoBehaviour
         : waveScoreThresholds[waveScoreThresholds.Count - 1];
 
     // Update UI
-    scoreProgressText.text = $"<color=green>Wave Score: {waveScore}</color> / {waveGoal}";
+    scoreProgressText.text = $"<color=green>{waveScore}</color> / {waveGoal}";
     if (multiplier >= 2)
     {
       multiplierText.gameObject.SetActive(true);

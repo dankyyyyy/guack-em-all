@@ -1,2 +1,20 @@
 fileFormatVersion: 2
 guid: d81fbb13b8e52804fbc2c7ab60407e0b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - mole: {instanceID: 0}
+  - moleHardHat: {instanceID: 0}
+  - moleHatBroken: {instanceID: 0}
+  - moleHit: {instanceID: 0}
+  - moleHatHit: {instanceID: 0}
+  - gameManager: {instanceID: 0}
+  - attackManager: {instanceID: 0}
+  - moleHitSound: {fileID: 8300000, guid: 4135ccde79891bb43b8bf4593be4dc11, type: 3}
+  - moleAudioSource: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
