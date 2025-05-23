@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
   [SerializeField] private TMPro.TextMeshProUGUI scoreProgressText;
   [SerializeField] private TextMeshProUGUI waveCompletedText;
 
+
+  [SerializeField] private GameObject waveTreshold;
+  [SerializeField] private GameObject timeBackground;
+
+
   [Header("Shop UI")]
   [SerializeField] private GameObject shopUI;
   [SerializeField] private Button buyChickenButton;
@@ -215,6 +220,9 @@ public class GameManager : MonoBehaviour
         waveText.gameObject.SetActive(false);
         timeText.gameObject.SetActive(false);
         scoreProgressText.gameObject.SetActive(false);
+        timeBackground.gameObject.SetActive(false);
+        waveTreshold.gameObject.SetActive(false);
+        multiplierText.gameObject.SetActive(false);
         // Show the shop UI
         shopUI.SetActive(true);
         hasPurchased = false;
@@ -233,6 +241,8 @@ public class GameManager : MonoBehaviour
         waveText.gameObject.SetActive(true);
         scoreProgressText.gameObject.SetActive(true);
         timeText.gameObject.SetActive(true);
+        timeBackground.gameObject.SetActive(true);
+        waveTreshold.gameObject.SetActive(true);
       }
     }
 

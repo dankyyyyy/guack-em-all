@@ -136,7 +136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &48035741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &57370095
 Transform:
   m_ObjectHideFlags: 0
@@ -455,7 +455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 96802889}
   - component: {fileID: 96802890}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: timebackground fr_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1721,7 +1721,6 @@ RectTransform:
   - {fileID: 287735264}
   - {fileID: 364761801}
   - {fileID: 2053176314}
-  - {fileID: 1691821906}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2191,7 +2190,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -3056,7 +3055,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -3130,7 +3129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1159333421
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3657,7 +3656,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1253899258
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3891,7 +3890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1292089154
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4695,6 +4694,8 @@ MonoBehaviour:
   waveScoreThresholds: 0a000000140000001e000000
   scoreProgressText: {fileID: 1292089155}
   waveCompletedText: {fileID: 287735265}
+  waveTreshold: {fileID: 427029688}
+  timeBackground: {fileID: 1691821905}
   shopUI: {fileID: 57370094}
   buyChickenButton: {fileID: 1011174350}
   buyCactusButton: {fileID: 1442950366}
@@ -5209,7 +5210,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -5560,7 +5561,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -5684,7 +5685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1691821906}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: timer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5700,12 +5701,12 @@ Transform:
   m_GameObject: {fileID: 1691821905}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1283.6663, y: -177.02579, z: -7.0978045}
-  m_LocalScale: {x: 3.0188677, y: 3.0188677, z: 3.0188677}
+  m_LocalPosition: {x: -120.194824, y: 134.76074, z: -2.6357992}
+  m_LocalScale: {x: 1.1210691, y: 1.1210691, z: 1.1210691}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 96802889}
-  m_Father: {fileID: 443802587}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1715045934
 GameObject:
@@ -7425,3 +7426,4 @@ SceneRoots:
   - {fileID: 1061982544}
   - {fileID: 1437216081}
   - {fileID: 427029690}
+  - {fileID: 1691821906}
