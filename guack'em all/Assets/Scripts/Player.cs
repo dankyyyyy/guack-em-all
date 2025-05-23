@@ -22,10 +22,10 @@ public class Player : MonoBehaviour
         float moveX = 0f;
         float moveY = 0f;
 
-        if (Input.GetKey(KeyCode.A)) moveX = -1f;
-        if (Input.GetKey(KeyCode.D)) moveX = 1f;
-        if (Input.GetKey(KeyCode.W)) moveY = 1f;
-        if (Input.GetKey(KeyCode.S)) moveY = -1f;
+        if (Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.LeftArrow)) moveX = -1f;
+        if (Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.RightArrow)) moveX = 1f;
+        if (Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.UpArrow)) moveY = 1f;
+        if (Input.GetKey(KeyCode.S)||Input.GetKey(KeyCode.DownArrow)) moveY = -1f;
 
         moveDirection = new Vector2(moveX, moveY).normalized;
 

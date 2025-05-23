@@ -125,7 +125,7 @@ public class AttackManager : MonoBehaviour
         }
 
         // Disable trail shortly after
-        Invoke("StopTrail", currentWeapon.swingLength); // Use the swingLength from the current weapon data
+        // Invoke("StopTrail", currentWeapon.swingLength); // Use the swingLength from the current weapon data
 
         StartCoroutine(EndSwingAfterDelay(currentWeapon.swingLength));
     }

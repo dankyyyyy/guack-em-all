@@ -31,12 +31,20 @@ public class Mole : MonoBehaviour
 
   // Mole Parameters 
   private bool hittable = true;
-  //public enum MoleType { Standard, HardHat, Bomb };
-  public enum MoleType { Standard, HardHat };
+  public enum MoleType { Standard, HardHat, Bomb };
+  // public enum MoleType { Standard, HardHat };
   private MoleType moleType;
   private float hardRate = 0.25f;
+  private float bombRate = 0f;
   private int moleHealth;
   private int moleIndex = 0;
+  [SerializeField] private AudioClip bombHitSound;
+  [SerializeField] private AudioClip bombPainSounds;
+  [SerializeField] private AudioSource moleAudioSource;
+
+  public AnimationCurve curve;
+  public float shakeDuration = 0.5f;
+  public Transform cameraTransform;
 
   private IEnumerator ShowHide(Vector2 start, Vector2 end)
   {
@@ -84,8 +92,8 @@ public class Mole : MonoBehaviour
     {
       hittable = false;
       // We only give time penalty if it isn't a bomb.
-      // gameManager.Missed(moleIndex, moleType = MoleType.Bomb);
       gameManager.Missed(moleIndex);
+      // gameManager.Missed(moleIndex);
     }
   }
 
@@ -136,7 +144,7 @@ public class Mole : MonoBehaviour
               gameManager.AddScore(moleIndex);
               StopAllCoroutines();
               StartCoroutine(QuickHide());
-              hittable = false; 
+              hittable = false;
             }
             else if (moleHealth > 0)
             {
@@ -148,7 +156,10 @@ public class Mole : MonoBehaviour
             }
           }
           break;
-        
+        case MoleType.Bomb:
+          PlayerHitBomb();
+          break;
+
       }
     }
   }
@@ -157,15 +168,15 @@ public class Mole : MonoBehaviour
   private void CreateNext()
   {
     float random = Random.Range(0f, 1f);
-    // if (random < bombRate)
-    // {
-    //   // Make a bomb.
-    //   moleType = MoleType.Bomb;
-    //   // The animator handles setting the sprite.
-    //   animator.enabled = true;
-    // }
-    // else
-    // {
+    if (random < bombRate)
+    {
+      // Make a bomb.
+      moleType = MoleType.Bomb;
+      // The animator handles setting the sprite.
+      animator.enabled = true;
+    }
+    else
+    {
       animator.enabled = false;
       // random = Random.Range(0f, 1f);
       if (random < hardRate)
@@ -182,7 +193,7 @@ public class Mole : MonoBehaviour
         spriteRenderer.sprite = mole;
         moleHealth = 5;
       }
-    // }
+    }
     // Mark as hittable so we can register an onclick event.
     hittable = true;
   }
@@ -191,7 +202,7 @@ public class Mole : MonoBehaviour
   private void SetLevel(int level)
   {
     // As level increases increse the bomb rate to 0.25 at level 10.
-    // bombRate = Mathf.Min(level * 0.025f, 0.25f);
+    bombRate = Mathf.Min(level * 0.025f, 0.25f);
 
     // Increase the amounts of HardHats until 100% at level 40.
     hardRate = Mathf.Min(level * 0.025f, 1f);
@@ -225,6 +236,64 @@ public class Mole : MonoBehaviour
     SetLevel(level);
     CreateNext();
     StartCoroutine(ShowHide(startPosition, endPosition));
+  }
+
+  private void PlayerHitBomb()
+  {
+    StartCameraShaking();
+
+    if (bombHitSound != null && bombPainSounds != null)
+    {
+      AudioClip bombHit = bombHitSound;
+      moleAudioSource.PlayOneShot(bombHit);
+
+      AudioClip bombCries = bombPainSounds;
+      moleAudioSource.PlayOneShot(bombCries);
+    }
+  }
+
+  //==================================
+  //        CAMERA SHAKING
+  //==================================
+
+  public void StartCameraShaking()
+  {
+    StartCoroutine(CameraShaking());
+  }
+
+  public void StopCameraShakingAfterDelay()
+  {
+    StartCoroutine(DelayedCall(1.5f, StopCameraShaking));
+  }
+
+  public void StopCameraShaking()
+  {
+    StopCoroutine(CameraShaking());
+  }
+
+  private IEnumerator DelayedCall(float delaySeconds, System.Action methodToCall)
+  {
+    yield return new WaitForSeconds(delaySeconds);
+    methodToCall?.Invoke();
+  }
+  IEnumerator CameraShaking()
+  {
+    if (cameraTransform != null)
+    {
+      Vector3 startPosition = cameraTransform.position;
+      float elapsedTime = 0f;
+
+      while (elapsedTime < shakeDuration)
+      {
+        elapsedTime += Time.deltaTime;
+        float strength = curve.Evaluate(elapsedTime / shakeDuration);
+        cameraTransform.position = startPosition + Random.insideUnitSphere;
+        yield return null;
+      }
+
+      cameraTransform.position = startPosition;
+      StopCameraShakingAfterDelay();
+    }
   }
 
   // Used by the game manager to uniquely identify moles. 
