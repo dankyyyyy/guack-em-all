@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
   [SerializeField] private GameObject gameUI;
   [SerializeField] private GameObject outOfTimeText;
   //[SerializeField] private GameObject bombText;
-  [SerializeField] private GameObject timeHeader;
   [SerializeField] private TMPro.TextMeshProUGUI timeText;
   [SerializeField] private TMPro.TextMeshProUGUI scoreText;
 
@@ -153,7 +152,7 @@ public class GameManager : MonoBehaviour
           ? waveScoreThresholds[currentWave]
           : waveScoreThresholds[waveScoreThresholds.Count - 1];
 
-      scoreProgressText.text = $"Wave Score: 0 / {waveGoal}";
+      scoreProgressText.text = $" 0 / {waveGoal}";
 
       // Increment wave after setting the UI
       currentWave++;
@@ -216,7 +215,6 @@ public class GameManager : MonoBehaviour
         waveText.gameObject.SetActive(false);
         timeText.gameObject.SetActive(false);
         scoreProgressText.gameObject.SetActive(false);
-        timeHeader.SetActive(false);
         // Show the shop UI
         shopUI.SetActive(true);
         hasPurchased = false;
@@ -235,7 +233,6 @@ public class GameManager : MonoBehaviour
         waveText.gameObject.SetActive(true);
         scoreProgressText.gameObject.SetActive(true);
         timeText.gameObject.SetActive(true);
-        timeHeader.SetActive(true);
       }
     }
 
@@ -375,7 +372,7 @@ public class GameManager : MonoBehaviour
         : waveScoreThresholds[waveScoreThresholds.Count - 1];
 
     // Update UI
-    scoreProgressText.text = $"<color=green>Wave Score: {waveScore}</color> / {waveGoal}";
+    scoreProgressText.text = $"<color=green>{waveScore}</color> / {waveGoal}";
     if (multiplier >= 2)
     {
       multiplierText.gameObject.SetActive(true);
