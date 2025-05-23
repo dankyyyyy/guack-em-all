@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
   //[SerializeField] private GameObject bombText;
   [SerializeField] private GameObject timeHeader;
   [SerializeField] private TMPro.TextMeshProUGUI timeText;
-  [SerializeField] private TMPro.TextMeshProUGUI scoreText;
+
 
 
   [SerializeField] private TMPro.TextMeshProUGUI waveText;
@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
     outOfTimeText.SetActive(false);
     //bombText.SetActive(false);
     gameUI.SetActive(true);
-    scoreText.gameObject.SetActive(false);
+  
     waveText.gameObject.SetActive(true);
     nextWaveCountdownText.gameObject.SetActive(false);
 
@@ -125,7 +125,7 @@ public class GameManager : MonoBehaviour
 
     currentMoles.Clear();
     score = 0;
-    scoreText.text = "0";
+    
     currentWave = 0;
     StartCoroutine(WaveRoutine());
   }
@@ -134,6 +134,7 @@ public class GameManager : MonoBehaviour
   {
     while (currentWave < maxWaves)
     {
+      scoreProgressText.gameObject.SetActive(true);
       // Set progress text before incrementing currentWave
       int waveGoal = waveScoreThresholds.Count >= currentWave + 1
           ? waveScoreThresholds[currentWave]
@@ -259,7 +260,7 @@ public class GameManager : MonoBehaviour
     nextWaveCountdownText.gameObject.SetActive(false);
     shopUI.SetActive(false);
   }
-  private void UpdateScoreUI() => scoreText.text = $"{score}";
+  private void UpdateScoreUI() => scoreProgressText.text = $"{score}";
 
   public void BuyChicken()
   {
