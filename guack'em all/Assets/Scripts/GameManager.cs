@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
   [SerializeField] private List<int> waveScoreThresholds = new List<int> { 10, 20, 30 };
   [SerializeField] private TMPro.TextMeshProUGUI scoreProgressText;
   [SerializeField] private TextMeshProUGUI waveCompletedText;
+    [SerializeField] private GameObject floatingTextPrefab;
+  [SerializeField] private Canvas canvas; // Should be your UI canvas
 
 
   [SerializeField] private GameObject waveTreshold;
@@ -252,6 +254,18 @@ public class GameManager : MonoBehaviour
     GameOver(0);
 
   }
+  public void ShowFloatingText(Vector3 worldPosition, string content, Color color)
+  {
+    Vector3 screenPosition = Camera.main.WorldToScreenPoint(worldPosition);
+
+    GameObject instance = Instantiate(floatingTextPrefab, screenPosition, Quaternion.identity, canvas.transform);
+    FloatingText floatingText = instance.GetComponent<FloatingText>();
+
+    if (floatingText != null)
+    {
+      floatingText.SetText(content, color);
+    }
+  }
   private IEnumerator NextWaveCountdown()
   {
     nextWaveCountdownText.gameObject.SetActive(true);
@@ -397,6 +411,14 @@ public class GameManager : MonoBehaviour
     else
     {
       multiplierText.gameObject.SetActive(false);
+    }
+      Vector3 moleWorldPos = moles[moleIndex].transform.position;
+    Color floatColor = Color.yellow;
+    if (multiplier >= 3) floatColor = Color.red;
+
+    if (multiplier > 1)
+    {
+      ShowFloatingText(moleWorldPos, $"x{multiplier}", floatColor);
     }
   }
   public int GetScore()
