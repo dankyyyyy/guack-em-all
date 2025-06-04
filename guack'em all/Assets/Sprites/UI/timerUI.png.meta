@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e091d9faff86fed408fc74d90c7d6e95
+guid: f9d707a194927f348ac788dacd1d7c06
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1668963784632880291
-    second: pesosUI_0
+      213: -5854988194854614232
+    second: timerUI_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pesosUI_0
+      name: timerUI_0
       rect:
         serializedVersion: 2
         x: 1
         y: 1
-        width: 274
+        width: 416
         height: 124
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d5337f9c746a6d8e0800000000000000
-      internalID: -1668963784632880291
+      spriteID: 82bc5910247eebea0800000000000000
+      internalID: -5854988194854614232
       vertices: []
       indices: 
       edges: []
