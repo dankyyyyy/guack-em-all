@@ -2867,6 +2867,10 @@ PrefabInstance:
       propertyPath: weaponSpriteRenderer
       value: 
       objectReference: {fileID: 745544870}
+    - target: {fileID: 6968107448476592622, guid: e009c0ca42e97e3499a006e22e9644a8, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1490925527}
     - target: {fileID: 7506442478129081061, guid: e009c0ca42e97e3499a006e22e9644a8, type: 3}
       propertyPath: m_Name
       value: ElGuaco Animated
@@ -4816,6 +4820,7 @@ MonoBehaviour:
   gameUI: {fileID: 1956542479}
   outOfTimeText: {fileID: 412379442}
   timeText: {fileID: 1253899259}
+  isGamePaused: 0
   waveText: {fileID: 48035741}
   nextWaveCountdownText: {fileID: 1159333422}
   waveScoreThresholds: 0a000000140000001e000000

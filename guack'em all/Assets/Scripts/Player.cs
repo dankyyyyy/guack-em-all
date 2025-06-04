@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
+    [SerializeField] private GameManager gameManager;
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -34,14 +36,16 @@ public class Player : MonoBehaviour
         // Send speed to Animator
         animator.SetFloat("Speed", moveDirection.magnitude);
 
-        if (Input.GetKey(KeyCode.Esc) && isGamePaused = false)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseGame();
-        }
-
-        if (Input.GetKey(KeyCode.Esc) && isGamePaused = true)
-        {
-            ResumeGame();
+            if (!gameManager.isGamePaused)
+            {
+                gameManager.PauseGame();
+            }
+            else
+            {
+                gameManager.ResumeGame();
+            }
         }
     }
 

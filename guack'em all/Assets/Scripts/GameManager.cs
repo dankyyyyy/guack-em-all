@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
   [SerializeField] private GameObject outOfTimeText;
   //[SerializeField] private GameObject bombText;
   [SerializeField] private TMPro.TextMeshProUGUI timeText;
-  private bool isGamePaused = false;
+  public bool isGamePaused = false;
 
   [SerializeField] private TMPro.TextMeshProUGUI waveText;
   [SerializeField] private TMPro.TextMeshProUGUI nextWaveCountdownText;
