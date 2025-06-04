@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
     outOfTimeText.SetActive(false);
     //bombText.SetActive(false);
     gameUI.SetActive(true);
-  
+
     waveText.gameObject.SetActive(true);
     nextWaveCountdownText.gameObject.SetActive(false);
 
@@ -143,11 +143,25 @@ public class GameManager : MonoBehaviour
 
     currentMoles.Clear();
     score = 0;
-    
+
     currentWave = 0;
     StartCoroutine(WaveRoutine());
   }
 
+
+  //==============================
+  // Game pause handling
+  // 
+  public void PauseGame()
+  {
+    Time.timeScale = 0;
+  }
+
+  public void ResumeGame()
+  {
+    Time.timeScale = 1;
+  }
+  //==============================
   private IEnumerator WaveRoutine()
   {
     while (currentWave < maxWaves)
