@@ -14,8 +14,7 @@ public class GameManager : MonoBehaviour
   [SerializeField] private GameObject outOfTimeText;
   //[SerializeField] private GameObject bombText;
   [SerializeField] private TMPro.TextMeshProUGUI timeText;
-
-
+  private bool isGamePaused = false;
 
   [SerializeField] private TMPro.TextMeshProUGUI waveText;
   [SerializeField] private TMPro.TextMeshProUGUI nextWaveCountdownText;
@@ -49,8 +48,6 @@ public class GameManager : MonoBehaviour
   private int chicken = 0;
   private int cactus = 0;
   private int maracas = 0;
-
-
 
   // Hardcoded - can be tuned in the inspector.
   [SerializeField] private float startingTime = 30f;
@@ -155,11 +152,13 @@ public class GameManager : MonoBehaviour
   public void PauseGame()
   {
     Time.timeScale = 0;
+    isGamePaused = true;
   }
 
   public void ResumeGame()
   {
     Time.timeScale = 1;
+    isGamePaused = false;
   }
   //==============================
   private IEnumerator WaveRoutine()
