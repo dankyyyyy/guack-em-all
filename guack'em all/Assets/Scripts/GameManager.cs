@@ -153,12 +153,14 @@ public class GameManager : MonoBehaviour
   {
     Time.timeScale = 0;
     isGamePaused = true;
+    Debug.Log($"Game is paused");
   }
 
   public void ResumeGame()
   {
     Time.timeScale = 1;
     isGamePaused = false;
+    Debug.Log($"Game has resumed");
   }
   //==============================
   private IEnumerator WaveRoutine()
