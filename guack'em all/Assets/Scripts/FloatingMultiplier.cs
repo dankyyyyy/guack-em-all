@@ -13,7 +13,7 @@ public float lifetime = 2f;
     {
         text.text = content;
         text.color = color;
-        text.fontSize = 20; 
+        text.fontSize = 72;
         transform.localScale = initialScale;
         StartCoroutine(AnimateText());
     }
