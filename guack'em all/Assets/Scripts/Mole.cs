@@ -96,7 +96,7 @@ public class Mole : MonoBehaviour
       hittable = false;
       // We only give time penalty if it isn't a bomb.
       gameManager.Missed(moleIndex);
-      // gameManager.Missed(moleIndex);
+      
     }
   }
 
@@ -217,14 +217,14 @@ public class Mole : MonoBehaviour
   private void SetLevel(int level)
   {
     // As level increases increse the bomb rate to 0.25 at level 10.
-    bombRate = Mathf.Min(level * 0.025f, 0.25f);
+    bombRate = Mathf.Min(level * 0.0025f, 0.25f);
 
     // Increase the amounts of HardHats until 100% at level 40.
-    hardRate = Mathf.Min(level * 0.025f, 1f);
+    hardRate = Mathf.Min(level * 0.0025f, 1f);
 
     // Duration bounds get quicker as we progress. No cap on insanity.
-    float durationMin = Mathf.Clamp(1 - level * 0.1f, 0.01f, 1f);
-    float durationMax = Mathf.Clamp(2 - level * 0.1f, 0.01f, 2f);
+   float durationMin = Mathf.Clamp(1.5f - level * 0.05f, 0.75f, 1.5f);
+    float durationMax = Mathf.Clamp(2.5f - level * 0.05f, 1f, 2.5f);
     duration = Random.Range(durationMin, durationMax);
   }
 

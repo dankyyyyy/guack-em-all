@@ -14,12 +14,14 @@ public class GameManager : MonoBehaviour
   [SerializeField] private GameObject outOfTimeText;
   //[SerializeField] private GameObject bombText;
   [SerializeField] private TMPro.TextMeshProUGUI timeText;
+  [SerializeField] private GameObject floatingTextPrefab;
+  [SerializeField] private Canvas canvas; // Should be your UI canvas
 
 
 
   [SerializeField] private TMPro.TextMeshProUGUI waveText;
   [SerializeField] private TMPro.TextMeshProUGUI nextWaveCountdownText;
-  [SerializeField] private List<int> waveScoreThresholds = new List<int> { 10, 20, 30 };
+  [SerializeField] private List<int> waveScoreThresholds = new List<int> { 200, 400, 600 };
   [SerializeField] private TMPro.TextMeshProUGUI scoreProgressText;
   [SerializeField] private TextMeshProUGUI waveCompletedText;
 
@@ -70,7 +72,7 @@ public class GameManager : MonoBehaviour
   // Start multiplier after 4 hits
   private const int streakThreshold = 2;
   // Optional cap on multiplier
-  private const int maxMultiplier = 5;
+  private const int maxMultiplier = 10;
   private int waveScore = 0;
 
   // Delayed start to allow for other objects to Awake -
@@ -131,7 +133,7 @@ public class GameManager : MonoBehaviour
     outOfTimeText.SetActive(false);
     //bombText.SetActive(false);
     gameUI.SetActive(true);
-  
+
     waveText.gameObject.SetActive(true);
     nextWaveCountdownText.gameObject.SetActive(false);
 
@@ -143,7 +145,7 @@ public class GameManager : MonoBehaviour
 
     currentMoles.Clear();
     score = 0;
-    
+
     currentWave = 0;
     StartCoroutine(WaveRoutine());
   }
@@ -176,13 +178,13 @@ public class GameManager : MonoBehaviour
         timeRemaining -= Time.deltaTime;
         timeText.text = $"{(int)timeRemaining / 60}:{(int)timeRemaining % 60:D2}";
 
-        if (currentMoles.Count <= (score / 10))
+        if (currentMoles.Count <= (score / 100))
         {
           int index = Random.Range(0, moles.Count);
           if (!currentMoles.Contains(moles[index]))
           {
             currentMoles.Add(moles[index]);
-            moles[index].Activate(score / 10);
+            moles[index].Activate(score / 100);
           }
         }
 
@@ -226,6 +228,7 @@ public class GameManager : MonoBehaviour
         multiplierText.gameObject.SetActive(false);
         // Show the shop UI
         shopUI.SetActive(true);
+        ResetMult();
         hasPurchased = false;
 
         buyChickenButton.interactable = true;
@@ -251,6 +254,18 @@ public class GameManager : MonoBehaviour
     // All waves are done
     GameOver(0);
 
+  }
+  public void ShowFloatingText(Vector3 worldPosition, string content, Color color)
+  {
+    Vector3 screenPosition = Camera.main.WorldToScreenPoint(worldPosition);
+
+    GameObject instance = Instantiate(floatingTextPrefab, screenPosition, Quaternion.identity, canvas.transform);
+    FloatingText floatingText = instance.GetComponent<FloatingText>();
+
+    if (floatingText != null)
+    {
+      floatingText.SetText(content, color);
+    }
   }
   private IEnumerator NextWaveCountdown()
   {
@@ -385,18 +400,28 @@ public class GameManager : MonoBehaviour
     // Update UI
     scoreProgressText.text = $"<color=green>{waveScore}</color> / {waveGoal}";
     if (multiplier >= 2)
-    {
-      multiplierText.gameObject.SetActive(true);
-      multiplierText.text = $"x{multiplier}";
+{
+    multiplierText.gameObject.SetActive(true);
+    multiplierText.text = $"x{multiplier}";
 
-      float scale = Mathf.Lerp(1f, 5f, (float)(multiplier - 1) / (maxMultiplier - 1));
-      multiplierText.fontSize = baseFontSize * scale;
+    // Scale more gently
+    float scale = Mathf.Lerp(1f, 5f, (float)(multiplier - 1) / (maxMultiplier - 1));
+    multiplierText.fontSize = baseFontSize * scale;
 
-      multiplierText.color = Color.Lerp(Color.white, Color.red, (float)multiplier / maxMultiplier);
-    }
-    else
+    multiplierText.color = Color.Lerp(Color.white, Color.red, (float)multiplier / maxMultiplier);
+}
+else
+{
+    multiplierText.gameObject.SetActive(false);
+}
+    // Show floating score at mole position
+    Vector3 moleWorldPos = moles[moleIndex].transform.position;
+    Color floatColor = Color.yellow;
+    if (multiplier >= 3) floatColor = Color.red;
+
+    if (multiplier > 1)
     {
-      multiplierText.gameObject.SetActive(false);
+      ShowFloatingText(moleWorldPos, $"x{multiplier}", floatColor);
     }
   }
   public int GetScore()
@@ -412,9 +437,13 @@ public class GameManager : MonoBehaviour
   //public void Missed(int moleIndex, bool isMole)
   public void Missed(int moleIndex)
   {
-    streakCount = 0;
-    multiplier = 1;
+
     // Remove from active moles.
     currentMoles.Remove(moles[moleIndex]);
+  }
+  public void ResetMult()
+  {
+    streakCount = 0;
+    multiplier = 1;
   }
 }
