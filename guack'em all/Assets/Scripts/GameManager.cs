@@ -26,8 +26,6 @@ public class GameManager : MonoBehaviour
   [SerializeField] private List<int> waveScoreThresholds = new List<int> { 200, 400, 600 };
   [SerializeField] private TMPro.TextMeshProUGUI scoreProgressText;
   [SerializeField] private TextMeshProUGUI waveCompletedText;
-    [SerializeField] private GameObject floatingTextPrefab;
-  [SerializeField] private Canvas canvas; // Should be your UI canvas
 
 
   [SerializeField] private GameObject waveTreshold;
@@ -439,14 +437,6 @@ else
 }
     // Show floating score at mole position
     Vector3 moleWorldPos = moles[moleIndex].transform.position;
-    Color floatColor = Color.yellow;
-    if (multiplier >= 3) floatColor = Color.red;
-
-    if (multiplier > 1)
-    {
-      ShowFloatingText(moleWorldPos, $"x{multiplier}", floatColor);
-    }
-      Vector3 moleWorldPos = moles[moleIndex].transform.position;
     Color floatColor = Color.yellow;
     if (multiplier >= 3) floatColor = Color.red;
 
