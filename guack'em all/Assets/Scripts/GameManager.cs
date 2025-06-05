@@ -12,12 +12,14 @@ public class GameManager : MonoBehaviour
   [Header("UI objects")]
   [SerializeField] private GameObject gameUI;
   [SerializeField] private GameObject outOfTimeText;
+  [SerializeField] private GameObject gamePausedText;
   //[SerializeField] private GameObject bombText;
   [SerializeField] private TMPro.TextMeshProUGUI timeText;
   [SerializeField] private GameObject floatingTextPrefab;
   [SerializeField] private Canvas canvas; // Should be your UI canvas
 
 
+  public bool isGamePaused = false;
 
   [SerializeField] private TMPro.TextMeshProUGUI waveText;
   [SerializeField] private TMPro.TextMeshProUGUI nextWaveCountdownText;
@@ -51,8 +53,6 @@ public class GameManager : MonoBehaviour
   private int chicken = 0;
   private int cactus = 0;
   private int maracas = 0;
-
-
 
   // Hardcoded - can be tuned in the inspector.
   [SerializeField] private float startingTime = 30f;
@@ -131,6 +131,7 @@ public class GameManager : MonoBehaviour
   public void StartGame()
   {
     outOfTimeText.SetActive(false);
+    gamePausedText.SetActive(false);
     //bombText.SetActive(false);
     gameUI.SetActive(true);
 
@@ -150,6 +151,26 @@ public class GameManager : MonoBehaviour
     StartCoroutine(WaveRoutine());
   }
 
+
+  //==============================
+  // Game pause handling
+  //
+  public void PauseGame()
+  {
+    Time.timeScale = 0;
+    isGamePaused = true;
+    gamePausedText.SetActive(true);
+    Debug.Log($"Game is paused");
+  }
+
+  public void ResumeGame()
+  {
+    Time.timeScale = 1;
+    isGamePaused = false;
+    gamePausedText.SetActive(false);
+    Debug.Log($"Game has resumed");
+  }
+  //==============================
   private IEnumerator WaveRoutine()
   {
     while (currentWave < maxWaves)

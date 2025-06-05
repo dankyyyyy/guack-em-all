@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
+    [SerializeField] private GameManager gameManager;
+
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
@@ -22,17 +24,29 @@ public class Player : MonoBehaviour
         float moveX = 0f;
         float moveY = 0f;
 
-        if (Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.LeftArrow)) moveX = -1f;
-        if (Input.GetKey(KeyCode.D)||Input.GetKey(KeyCode.RightArrow)) moveX = 1f;
-        if (Input.GetKey(KeyCode.W)||Input.GetKey(KeyCode.UpArrow)) moveY = 1f;
-        if (Input.GetKey(KeyCode.S)||Input.GetKey(KeyCode.DownArrow)) moveY = -1f;
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) moveX = -1f;
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) moveX = 1f;
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) moveY = 1f;
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) moveY = -1f;
 
         moveDirection = new Vector2(moveX, moveY).normalized;
 
         FlipSprite(moveDirection);
-        
+
         // Send speed to Animator
         animator.SetFloat("Speed", moveDirection.magnitude);
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!gameManager.isGamePaused)
+            {
+                gameManager.PauseGame();
+            }
+            else
+            {
+                gameManager.ResumeGame();
+            }
+        }
     }
 
     void FixedUpdate()
