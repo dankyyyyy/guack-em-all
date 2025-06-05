@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
   [Header("UI objects")]
   [SerializeField] private GameObject gameUI;
   [SerializeField] private GameObject outOfTimeText;
+  [SerializeField] private GameObject gamePausedText;
   //[SerializeField] private GameObject bombText;
   [SerializeField] private TMPro.TextMeshProUGUI timeText;
   public bool isGamePaused = false;
@@ -126,6 +127,7 @@ public class GameManager : MonoBehaviour
   public void StartGame()
   {
     outOfTimeText.SetActive(false);
+    gamePausedText.SetActive(false);
     //bombText.SetActive(false);
     gameUI.SetActive(true);
 
@@ -153,6 +155,7 @@ public class GameManager : MonoBehaviour
   {
     Time.timeScale = 0;
     isGamePaused = true;
+    gamePausedText.SetActive(true);
     Debug.Log($"Game is paused");
   }
 
@@ -160,6 +163,7 @@ public class GameManager : MonoBehaviour
   {
     Time.timeScale = 1;
     isGamePaused = false;
+    gamePausedText.SetActive(false);
     Debug.Log($"Game has resumed");
   }
   //==============================
