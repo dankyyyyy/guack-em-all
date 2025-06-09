@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
   [SerializeField] private TMPro.TextMeshProUGUI waveText;
   [SerializeField] private TMPro.TextMeshProUGUI nextWaveCountdownText;
-  [SerializeField] private List<int> waveScoreThresholds = new List<int> { 200, 400, 600 };
+  [SerializeField] private List<int> waveScoreThresholds = new List<int> { 2000, 4000, 6000 };
   [SerializeField] private TMPro.TextMeshProUGUI scoreProgressText;
   [SerializeField] private TextMeshProUGUI waveCompletedText;
 
@@ -199,13 +199,13 @@ public class GameManager : MonoBehaviour
         timeRemaining -= Time.deltaTime;
         timeText.text = $"{(int)timeRemaining / 60}:{(int)timeRemaining % 60:D2}";
 
-        if (currentMoles.Count <= (score / 100))
+        if (currentMoles.Count <= (score / 10))
         {
           int index = Random.Range(0, moles.Count);
           if (!currentMoles.Contains(moles[index]))
           {
             currentMoles.Add(moles[index]);
-            moles[index].Activate(score / 100);
+            moles[index].Activate(score / 10);
           }
         }
 
@@ -407,7 +407,7 @@ public class GameManager : MonoBehaviour
       multiplier = 1 + (streakCount - streakThreshold + 1);
       multiplier = Mathf.Min(multiplier, maxMultiplier);
     }
-    int addedScore = 1 * multiplier;
+    int addedScore = 100 * multiplier;
     score += addedScore;
     waveScore += addedScore;
 
